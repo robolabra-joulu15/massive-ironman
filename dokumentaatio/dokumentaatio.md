@@ -1,3 +1,5 @@
+author: Henri Vaara
+
 #suunnitelma:
 
 aiheena on tasapainotteleva droidi, tavoitteena saada rakennelma pysymään kahden pyörän varassa pystyssä. mikäli onnistuu niin liikettä eri suuntiin.
