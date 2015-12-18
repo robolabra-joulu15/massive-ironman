@@ -1,3 +1,5 @@
+Robolabra: Aapo Korvenranta, 18.12.2015
+
 Aiheenani on pienten eriväristen asioiden, esimerkiksi karkkien lajittelurobortti. Robotti rakennetaan EV3- sarjalla.
 Robottiin tulee liukuhihna (tai painovoimaan perustuva ränni), jolle esine asetetaan, sekä jonkinlainen portti/käsivarsiratkaisu, 
 joka ohjaa esineen oikeaan lokeroon 
