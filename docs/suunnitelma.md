@@ -6,3 +6,4 @@ Tavoitteena olisi tunnistaa suorakulmion, pallon ja neliön muotoisia esineitä 
 Mahdollisia vastaantulevia ongelmia voi olla esim. tunnistuksen tarkkuus muodon ja koon suhteen. Myöskään robotin tarkat speksit ja osien toimivuus ei ole tiedossa, mutta aiheen pitäisi olla sen verran yksinkertainen, että se on toteutettavissa.
 
 
+Nimi: Laukkasen Heikki
