@@ -1,3 +1,5 @@
+Robolabra: Aapo Korvenranta, 18.12.2015
+
 Aiheenani on värilajittelurobotti. Tällä viikolla olen perustanut Eclipse/LeJos ohjelmistoympäristön 
 sekä testannut pienillä ohjelmilla, että saan ohjelmat asennettua ja ajettua EV3- laitteessa. Olen myös yleisesti tutustunt 
 LeJOs- ympäristöön ja sen luokkiin.
