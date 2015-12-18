@@ -1,0 +1,1 @@
+Aiheena on autonomisesti liikkuva auto, tavoitteena on että etäisyys-sensoria hyväksikäyttäen auto osaisi väistää esteitä ennen törmäämistä ja mahdollisesti parkeerata ns.taskuun. 
