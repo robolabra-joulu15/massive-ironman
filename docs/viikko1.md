@@ -1,0 +1,1 @@
+I have had a few problems with the environment set up that I will hopefully fix soon. I also have a basic build of the robot vehicle already and I am testing out what the best positions for the sensors. I am also checking out this cool new compass sensor on the internet; it seems very promising.
