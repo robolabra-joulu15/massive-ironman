@@ -1,1 +1,3 @@
-Aiheena on autonomisesti liikkuva auto, tavoitteena on että etäisyys-sensoria hyväksikäyttäen auto osaisi väistää esteitä ennen törmäämistä ja mahdollisesti parkeerata ns.taskuun. 
+Aiheena on itsekseen liikkuva auto, tavoitteena on että etäisyyssensoria hyväksikäyttäen auto osaisi väistää esteitä ja parkkeerata ns.taskuun.
+
+Ongelmia veikkaan tulevan jokaisessa vaiheessa työtä, mutta suurimpana varmaankin etäisyyssensorin toiminta.
