@@ -1,0 +1,1 @@
+Tarkoituksena on tehdä robotti joka tasapainottelee kahdella renkaalla. Jos aika ja taidot riittävät niin laitetaan robotti myös liikkumaan. Tarkoituksena on käyttää etäisyys mittaria ja moottoreita ainoastaan.
