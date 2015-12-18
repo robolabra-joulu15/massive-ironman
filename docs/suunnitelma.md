@@ -1,0 +1,3 @@
+Suunnitelmani on tehdä makupalan heittämisen osaava robotti. Mekaanisen rakenteen on tarkoitus olla yksinkertainen ja toimintavarma. Robottiin on tarkoitus laittaa erilaisia triggerointi-menetelmiä, esimerkiksi webin kautta lähetettävä laukaisin, tämän lisäksi teen mahdollisesti äänilaukaisimen.
+
+Robotin tulee olemaan pääpiirteittäin kolme ominaisuutta: 1. viritys, 2. pito ja 3 vapautus. Robotin on tarkoitus suorittaa viritys ja pito automaattisesti laukaisun (3. vapautus) jälkeen. Käyttäjä kontrolloi vapautusta erilaisin metodein. Ohjelmallisesti tavoitteena on luoda koodi, johon laukaisumekanismien implementointi on helppoa. 
