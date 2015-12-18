@@ -1,0 +1,1 @@
+Tarkoituksena olisi tehdä viivaa seuraava robotti. Luultavasti robotti tulee seuraamaan mustaa viivaa valkoisella pohjalla. Viivan tunnistus tapahtuu värisensorilla ja robotti liikkuu sen mukaan, mitä tietoja sensori antaa. Ongelmana varmaankin on toteutus, miten tunnistus tapahtuu ja millä tavalla varmistetaan, että robotti seuraa viivaa. 
