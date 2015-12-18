@@ -1,0 +1,1 @@
+Ensimmäisen viikon aikana en ole oikeastaan muuta ehtinyt kuin miettiä ideaa. Nyt kun sen keksin, olen jo alkanut hieman hahmotella varsinaista laitetta. Ensi viikon aikana rakennan auran valmiiksi ja alan suunnitella koodia. Luonnollisesti välitestausten aikana saattaa joutua myös itse laitetta muokkaamaan.
