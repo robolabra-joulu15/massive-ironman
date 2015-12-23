@@ -7,6 +7,8 @@ public class LineFollower {
     
     public void start() {
     	
+    	BehaviorHandler bh = new BehaviorHandler();
+    	
     	Behavior shutdown = new ShutdownBehavior();
     	
     	Behavior[] behaviors = {shutdown};
