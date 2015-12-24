@@ -30,7 +30,7 @@ public class BehaviorHandler {
 		Behavior[] ret = new Behavior[size];
 		PriorityQueue clone = new PriorityQueue(this.behaviors);
 		
-		for (int i = 0; i < ret.length; i++) {
+		for (int i = ret.length-1; i >= 0; i--) {
 			ret[i] = clone.del_min();
 		}
 		
