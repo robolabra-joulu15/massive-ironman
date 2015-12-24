@@ -1,29 +1,40 @@
 package logic;
 
+import lejos.nxt.Button;
 import lejos.robotics.subsumption.Behavior;
+import util.PriorityPair;
 import util.PriorityQueue;
 
+/*
+ 
+ This class uses the PriorityQueue class I made to automatically sort behaviors in a correct order and easily 
+ converting them to an array. This allows flexible adding of behaviors.
+ 
+ */
 
 public class BehaviorHandler {
 	
 	private PriorityQueue behaviors;
 	
 	public BehaviorHandler() {
-		behaviors = new PriorityQueue(10);
-		
-	    behaviors.insert(new ShutdownBehavior(), 1);
-	    behaviors.insert(new ShutdownBehavior(), 3);
-	    behaviors.insert(new ShutdownBehavior(), 2);
-	    behaviors.insert(new ShutdownBehavior(), 0);
-	    behaviors.insert(new ShutdownBehavior(), 4);
-    
-	    while(!behaviors.isEmpty()) {
-	    	Behavior deleted = behaviors.del_min();
-	    }
+		behaviors = new PriorityQueue(255);
 	}
 	
-	//TODO: priorityqueue...
+	//Smaller priority value means higher priority
+	public boolean addBehavior(Behavior behavior, int priority) {
+		return behaviors.insert(behavior, priority);
+	}
 	
-	
+	public Behavior[] getArray() {
+		int size = behaviors.size();
+		Behavior[] ret = new Behavior[size];
+		PriorityQueue clone = new PriorityQueue(this.behaviors);
+		
+		for (int i = 0; i < ret.length; i++) {
+			ret[i] = clone.del_min();
+		}
+		
+		return ret;
+	}
 
 }

@@ -7,13 +7,11 @@ public class LineFollower {
     
     public void start() {
     	
-    	BehaviorHandler bh = new BehaviorHandler();
+    	BehaviorHandler behaviors = new BehaviorHandler();
     	
-    	Behavior shutdown = new ShutdownBehavior();
+    	behaviors.addBehavior(new ShutdownBehavior(), 0);
     	
-    	Behavior[] behaviors = {shutdown};
-    	
-    	Arbitrator arbitrator = new Arbitrator(behaviors);
+    	Arbitrator arbitrator = new Arbitrator(behaviors.getArray());
     	arbitrator.start();
     
     }

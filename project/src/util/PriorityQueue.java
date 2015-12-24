@@ -4,8 +4,8 @@ import lejos.robotics.subsumption.Behavior;
 
 /*
  
- I ran into problems when I tried making this class generic... Seems like openjdk6
- in addition to missing a PriorityQueue-class apparently doesn't know Array class so 
+ I ran into problems when making this class generic... Seems like openjdk6
+ in addition to missing a PriorityQueue class apparently doesn't know Array class so 
  using StackOverflow trick to create the array didn't work...
  
  @SuppressWarnings("unchecked")
@@ -22,26 +22,35 @@ public class PriorityQueue {
 	private PriorityPair[] array;
 	
 	public PriorityQueue(int size) {
-		array = new PriorityPair[size];
-		heap_size = 0;
+		this.array = new PriorityPair[size];
+		this.heap_size = 0;
+	}
+	
+	public PriorityQueue(PriorityQueue queue) {
+		this.array = queue.array;
+		this.heap_size = queue.heap_size;
 	}
 	
 	//Create a new pair and insert it in the right place
-	public void insert(Behavior behavior, int priority) {
+	public boolean insert(Behavior behavior, int priority) {
+		if (this.isFull()) return false;
+		
 		this.heap_size++;
 		int i = this.heap_size;
 		PriorityPair pair = new PriorityPair(behavior, priority);
 		
-		while (i > 0 && this.array[this.parent(i)].getPriority() > priority) {
+		while (i > 1 && this.array[this.parent(i)].getPriority() > priority) {
 			this.array[i] = this.array[this.parent(i)];
 			i = this.parent(i);
 		}
 		
 		this.array[i] = pair;
+		
+		return true;
 	}
 	
 	public Behavior min() {
-		return this.array[0].getObject();
+		return this.array[1].getObject();
 	}
 	
 	public Behavior del_min() {
@@ -49,7 +58,7 @@ public class PriorityQueue {
 		
 		this.array[1] = this.array[heap_size];
 		this.heap_size--;
-		this.heapify(0);
+		this.heapify(1);
 		
 		return min;
 	}
@@ -83,6 +92,14 @@ public class PriorityQueue {
 	
 	public boolean isEmpty() {
 		return this.heap_size == 0;
+	}
+	
+	public boolean isFull() {
+		return this.heap_size == array.length-1;
+	}
+	
+	public int size() {
+		return this.heap_size;
 	}
 	
 	private int parent(int index) {
