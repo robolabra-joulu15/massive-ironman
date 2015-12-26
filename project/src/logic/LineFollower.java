@@ -15,6 +15,7 @@ public class LineFollower {
     	
     	DifferentialPilot pilot = new DifferentialPilot(5.6f, 12.0f, Motor.A, Motor.B);
     	pilot.setRotateSpeed(180);
+    	pilot.setTravelSpeed(2);
     	
     	LightSensor light = new LightSensor(SensorPort.S1);
     	light.setFloodlight(true);
@@ -22,10 +23,12 @@ public class LineFollower {
     	BehaviorHandler behaviors = new BehaviorHandler();
     	
     	behaviors.addBehavior(new ShutdownBehavior(), 0);
-    	behaviors.addBehavior(new MoveforwardBehavior(pilot, light), 1);
-    	behaviors.addBehavior(new RotateBehavior(pilot, light), 2);
+    	behaviors.addBehavior(new MoveforwardBehavior(pilot, light), 2);
+    	behaviors.addBehavior(new RotateBehavior(pilot, light), 1);
     	
     	Arbitrator arbitrator = new Arbitrator(behaviors.getArray());
+    	
+    	Button.ENTER.waitForPress();
     	
     	SensorPort.S1.addSensorPortListener(new LCDUpdater(light));
     	arbitrator.start();

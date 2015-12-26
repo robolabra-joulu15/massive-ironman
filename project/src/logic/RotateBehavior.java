@@ -8,7 +8,7 @@ public class RotateBehavior implements Behavior {
 
 	private DifferentialPilot pilot;
 	private LightSensor light;
-	private boolean suppressed = false;
+	private boolean suppress = false;
 	
 	public RotateBehavior(DifferentialPilot pilot, LightSensor light) {
 		this.pilot = pilot;
@@ -17,17 +17,12 @@ public class RotateBehavior implements Behavior {
 	
 	@Override
     public void action() {
-	    this.suppressed = false;
-		
-		while(!suppressed) {
-			Thread.yield();
-		}
 		
     }
 
 	@Override
     public void suppress() {
-	    this.suppressed = true;
+		suppress = true;
     }
 
 	@Override
