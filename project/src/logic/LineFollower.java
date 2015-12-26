@@ -22,11 +22,12 @@ public class LineFollower {
     	BehaviorHandler behaviors = new BehaviorHandler();
     	
     	behaviors.addBehavior(new ShutdownBehavior(), 0);
-    	behaviors.addBehavior(new MoveforwardBehavior(pilot, light), 2);
-    	behaviors.addBehavior(new RotateBehavior(pilot, light), 1);
+    	behaviors.addBehavior(new MoveforwardBehavior(pilot, light), 1);
+    	behaviors.addBehavior(new RotateBehavior(pilot, light), 2);
     	
     	Arbitrator arbitrator = new Arbitrator(behaviors.getArray());
     	
+    	SensorPort.S1.addSensorPortListener(new LCDUpdater(light));
     	arbitrator.start();
     
     }

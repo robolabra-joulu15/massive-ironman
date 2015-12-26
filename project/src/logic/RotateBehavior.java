@@ -17,7 +17,8 @@ public class RotateBehavior implements Behavior {
 	
 	@Override
     public void action() {
-	    
+	    this.suppressed = false;
+		
 		while(!suppressed) {
 			Thread.yield();
 		}
