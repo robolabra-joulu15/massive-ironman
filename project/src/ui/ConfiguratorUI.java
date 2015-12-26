@@ -13,7 +13,6 @@ public class ConfiguratorUI {
 	}
 	
 	public boolean start() {
-		
 		this.displayInterface();
 		Pointer pointer = new Pointer(0, 1);
 		pointer.render();
@@ -39,10 +38,8 @@ public class ConfiguratorUI {
 				}
 			}
 			
-			pointer.setRow(selection);
-			
+			pointer.setRow(selection);	
 		}
-		
 	}
 	
 	private void displayInterface() {
@@ -63,9 +60,6 @@ public class ConfiguratorUI {
 		LCD.drawInt(this.config.getBackgroundColor(), 13, 4);
 		LCD.drawInt(this.config.getMovementSpeed(), 13, 5);
 		LCD.drawInt(this.config.getRotatingSpeed(), 13, 6);
-		
-		
-		
 	}
 	
 }
