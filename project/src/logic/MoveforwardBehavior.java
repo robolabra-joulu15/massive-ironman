@@ -1,32 +1,31 @@
 package logic;
 
-import lejos.nxt.Motor;
-import lejos.nxt.MotorPort;
-import lejos.nxt.NXTRegulatedMotor;
+import lejos.nxt.LightSensor;
+import lejos.robotics.navigation.DifferentialPilot;
 import lejos.robotics.subsumption.Behavior;
 
 public class MoveforwardBehavior implements Behavior {
 	
 	private boolean suppressed = false;
-	private NXTRegulatedMotor left;
-	private NXTRegulatedMotor right;
+	private DifferentialPilot pilot;
+	private LightSensor light;
 	
-	public MoveforwardBehavior(NXTRegulatedMotor left, NXTRegulatedMotor right) {
-	    this.left = left;
-	    this.right = right;
+	public MoveforwardBehavior(DifferentialPilot pilot, LightSensor light) {
+	    this.pilot = pilot;
+	    this.light = light;
     }
 	
 	@Override
     public void action() {
-		suppressed = false;
-		left.forward();
-		right.forward();
+		this.suppressed = false;
+		this.pilot.forward();
+		
 		while(!suppressed) {
-			Thread.yield();
+			Thread.yield();	
 		}
-		left.stop();
-		right.stop();
-    }
+		
+		this.pilot.stop();
+	}
 
 	@Override
     public void suppress() {
@@ -35,7 +34,7 @@ public class MoveforwardBehavior implements Behavior {
 
 	@Override
     public boolean takeControl() {
-	    return true; //always take control if possible
+	    return this.light.readValue() <= 40; 
     }
 	
 }
