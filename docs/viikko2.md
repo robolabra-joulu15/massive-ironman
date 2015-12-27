@@ -1,4 +1,4 @@
-Viikko 2
+**Viikko 2**
 
 Toinen viikko meni suurimmaksi osaksi jouluhössötykseen/stressiin, joten projektini ei ole hirveästi ehtiny edetä.
 Sain asennettua ohjelmistoympäristön virtuaalikoneeseen ja aluksi oli hieman ongelmia, sillä annoin liian 
