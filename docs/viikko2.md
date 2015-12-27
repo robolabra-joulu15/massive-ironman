@@ -1,6 +1,6 @@
 #Viikkoraportti 2 (Opiskelija: 014614288)
 
-Viikon 2 raportti :)
+Viikon 2 raportti :) Pahoittelut pituudesta! :D
 
 ###Viikon kuulumiset
 
@@ -15,6 +15,14 @@ Tutustuin minulle vinkattuun PID-kontrolleriin enemmän ja tajusin, että se on 
 Koodasin monia erilaisia käyttöliittymäelementtejä (NumberSelector, MotorSelector, LightValueSelector) sekä tein robotin asetuksista olion, jonka gettereiden ja settereiden avulla asetusten lukeminen ja muokkaaminen eri luokista on helppoa. Sain käyttöliittymän kasaan melko nopeasti (tai no, koodasin todella innokkaasti), ja seuraavaksi onkin vuorossa sitten itse viivanseuraajan toteutus.
 
 Viime viikolla määrittelemistäni "ensi viikon suunnitelmista" poikkesin huomattavasti, mutta tämä johtuu siitä, etten ollut ehtinyt tutustua vielä tarpeeksi LeJOS:n materiaaleihin. Esimerkiksi moottoreiden hallintaan oli LeJOS:ssa valmiina todella hyvin tähän käyttötarkoitukseen sopiva luokka, DifferentialPilot. Valosensorin käyttö tuskin tarvitsee omaa luokkaa, koska käytännössä minun tarvitsee vain luoda LightSensor-luokan olio ja lukea valosensorin arvo sen metodilla readValue(). Viivanseuraajalogiikan kanssa työskentelin aluksi, mutta suunnitelmien muuttumisen vuoksi se on vielä uudessa koodissa täysin implementoimatta. 
+
+Muutama kuva projektin tilanteesta!
+
+![Main](https://raw.githubusercontent.com/TheDuckFIN/massive-ironman/master/pictures/main.jpg)
+![MotorSelector](https://raw.githubusercontent.com/TheDuckFIN/massive-ironman/master/pictures/motorselector.jpg)
+![NumberSelector](https://raw.githubusercontent.com/TheDuckFIN/massive-ironman/master/pictures/numberselector.jpg)
+![LightValueSelector](https://raw.githubusercontent.com/TheDuckFIN/massive-ironman/master/pictures/lightvalueselector.jpg)
+![RoboV1](https://raw.githubusercontent.com/TheDuckFIN/massive-ironman/master/pictures/robotv1.jpg)
 
 ###Ensi viikon suunnitelmat
 
