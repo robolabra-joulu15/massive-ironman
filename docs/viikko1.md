@@ -1,5 +1,5 @@
 
-Viikko 1 palautus
+**Viikko 1 palautus**
 
 Aiheena on beerpong legorobotti, joka pystyy ampumaan palloja määrättyihin kohteisiin. Vielä ei ole varmaa
 hyödynnänkö etäisyys sensoria, sillä en ole varma kuinka tehokkaasti se pystyy huomaamaan kohteet (esim. pöydällä olevat mukit).
