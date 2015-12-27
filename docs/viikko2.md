@@ -4,7 +4,7 @@ Käyttöympäristö on tuottanut hieman ongelmia josta johtuen(osittain myös lo
 1) Läppärini ei tunnista robottia jos sen liittää koneeseen USB:llä, pöytäkoneella kyllä toimii. Tästä syystä en ole pystynyt päivittämään tiiliskiven(vai mikälie onkaan nimeltään) firmwarea.
 2) Läppärin bluetooth ei toimi virtuaalikoneessa jostain syystä, joten en voi silläkään ottaa yhteyttä robottiin.
 
-Tulen maanantaina pajaan toivottavasti ratkaisemaan nämä ongelmat.
+Pyrin ratkaisemaan nämä ongelmat maanantaina pajassa.
 
 Olen ohjelmoinut primitiivistä liikkumista(eteen, taakse, käänny), mutta edellä manituista syistä johtuen en ole päässyt kokeilemaan niiden toimivuutta.
 
