@@ -22,7 +22,6 @@ public class LightValueSelector {
 		LCD.drawString("value for", 4, 3);
 		LCD.drawString("\"" + this.description + "\"", (16-this.description.length())/2, 5);
 		Button.waitForPress();
-		Sound.beep();
 		
 		return this.light.readValue();	
 	}

@@ -36,17 +36,21 @@ public class ConfiguratorUI {
 					MotorSelector rightMotorSelect = new MotorSelector(this.config.getRightMotorChar());
 					this.config.setRightMotor(rightMotorSelect.select());
 				}else if (selection == 3) {
-					//Line color
+					//Line color selection
 					LightValueSelector lineColorSelect = new LightValueSelector("Line color");
 					this.config.setLineColor(lineColorSelect.select());
 				}else if (selection == 4) {
-					//BG color
+					//BG color selection
 					LightValueSelector bgColorSelect = new LightValueSelector("BG color");
 					this.config.setBackgroundColor(bgColorSelect.select());
 				}else if (selection == 5) {
-					//Move speed
+					//Move speed selection
+					NumberSelector moveSpeedSelect = new NumberSelector(3, this.config.getMovementSpeed());
+					this.config.setMovementSpeed(moveSpeedSelect.select());
 				}else if (selection == 6) {
-					//Turn speed
+					//Turn speed selection
+					NumberSelector rotationSpeedSelector = new NumberSelector(3, this.config.getRotationSpeed());
+					this.config.setRotationSpeed(rotationSpeedSelector.select());
 				}else if (selection == 7) {
 					//Start robot
 					return true;
@@ -87,7 +91,7 @@ public class ConfiguratorUI {
 		LCD.drawInt(this.config.getLineColor(), 13, 3);
 		LCD.drawInt(this.config.getBackgroundColor(), 13, 4);
 		LCD.drawInt(this.config.getMovementSpeed(), 13, 5);
-		LCD.drawInt(this.config.getRotatingSpeed(), 13, 6);
+		LCD.drawInt(this.config.getRotationSpeed(), 13, 6);
 	}
 	
 }

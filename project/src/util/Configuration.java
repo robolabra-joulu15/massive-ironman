@@ -12,7 +12,7 @@ import lejos.robotics.RegulatedMotor;
 public class Configuration {
 
 	public int movementSpeed;
-	public int rotatingSpeed;
+	public int rotationSpeed;
 	public RegulatedMotor leftMotor;
 	public RegulatedMotor rightMotor;
 	public double wheelWidth;
@@ -23,7 +23,7 @@ public class Configuration {
 	public Configuration() {
 	    //EDIT DEFAULTS HERE
 		this.movementSpeed = 20;
-		this.rotatingSpeed = 180;
+		this.rotationSpeed = 180;
 		this.leftMotor = Motor.A;
 		this.rightMotor = Motor.B;
 		this.wheelWidth = 5.6;
@@ -52,8 +52,8 @@ public class Configuration {
 	    this.movementSpeed = movementSpeed;
     }
 	
-	public void setRotatingSpeed(int rotatingSpeed) {
-	    this.rotatingSpeed = rotatingSpeed;
+	public void setRotationSpeed(int rotationSpeed) {
+	    this.rotationSpeed = rotationSpeed;
     }
 	
 	public void setTrackWidth(double trackWidth) {
@@ -92,8 +92,8 @@ public class Configuration {
 	    return movementSpeed;
     }
 	
-	public int getRotatingSpeed() {
-	    return rotatingSpeed;
+	public int getRotationSpeed() {
+	    return rotationSpeed;
     }
 	
 	public double getTrackWidth() {
