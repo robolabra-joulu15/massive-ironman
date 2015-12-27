@@ -7,3 +7,4 @@ tutustumaan ohjelmistoympäristöön. Yritin ohjelmistoympäristöä asentaa tik
 tuli teksti "Boot Error".
 Ideani muovautui siihen että teen robotista enemmänkin aseen tapaisen pallon ampumis robototin.
 Legon kasauksen olen aloittanut mutta ohjelmistoa en ole alkanut kehittämään vielä tällä viikolla.
+Ensi viikon tavoitteina on saada robotti kasaan ja ohjelmisto toimimaan raakaversiona.
