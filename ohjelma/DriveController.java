@@ -5,7 +5,7 @@ public class DriveController {
 	private MotorController mc;
 	private int base_speed = 55;
 	private int multiplier = 18;
-	private int iteration_time = 20;
+	private int iteration_time = 25;
 	
 	public DriveController(SensorController sc, MotorController mc)
 	{
@@ -13,14 +13,35 @@ public class DriveController {
 		this.mc = mc;		
 	}
 	
+	private int angle;
+	
 	public void balance() throws InterruptedException
 	{
-		int angle = sc.angle();
+		angle = sc.angle();
 		
-		if (angle < 0 && angle >= -50) mc.noseDown(speed(angle), iteration_time);
-		else if (angle > 0 && angle <= 50) mc.noseUp((int)(speed(angle)*1.2), iteration_time);
+		if (angle < 0 && angle >= -50) mc.noseDown(accelerated_speed(speed(angle)), iteration_time);
+		else if (angle > 0 && angle <= 50) mc.noseUp((int)(accelerated_speed(speed(angle))*1.2), iteration_time);
 		else mc.neutral();
 	}
+	
+	
+	private int accelerated_speed(int speed) throws InterruptedException
+	{
+		int acceleration = sc.acceleration();
+		
+		speed = (int)(speed * 1.1f);
+		
+		if (angle < 0 && acceleration > 0) //nose down, going to balance
+		{
+			return (int)(speed * 0.7f);
+		}
+		if (angle > 0 && acceleration < 0) // nose up, going to balance
+		{
+			return (int)(speed * 0.7f);
+		}
+		return speed;
+	}
+	
 	
 	private int speed(int angle)
 	{
@@ -28,6 +49,9 @@ public class DriveController {
 		//int base = 50;
 		//int multiplier = 2;
 		angle = Math.abs(angle);
+		
+		
+		
 		
 		switch (angle)
 		{
@@ -37,10 +61,10 @@ public class DriveController {
 			case 3 : return 15;
 			case 4 : return 20;
 			case 5 : return 30;
-			case 6 : return 40;
-			case 7 : return 50;
-			case 8 : return 60;
-			case 9 : return 70;
+			case 6 : return 60;
+			case 7 : return 80;
+			case 8 : return 90;
+			case 9 : return 100;
 			case 10 : return 110;
 			case 11 : return 120;
 			case 12 : return 130;

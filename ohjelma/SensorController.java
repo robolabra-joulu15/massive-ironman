@@ -59,7 +59,7 @@ public class SensorController {
 	
 	
 	
-	private int cache_size = 3;
+	private int cache_size = 6;
 	private int[] cache = new int[cache_size];
 	private int sum = 0;
 	private int index = 0;
@@ -80,7 +80,14 @@ public class SensorController {
 		return sum / cache_size;
 	}
 	
+	public int acceleration() throws InterruptedException
+	{
+		
+		
+		return last_angle-angle();
+	}
 	
+	private int last_angle = 0;
 	public int angle()
 	{
 		//sonic_dist = sonic();
@@ -101,9 +108,21 @@ public class SensorController {
 		
 		int unscaled_angle = value-balance_point;
 		
-		if (unscaled_angle > 0) return (int)(unscaled_angle * plus_multiplier);
-		else if (unscaled_angle < 0) return (int)(unscaled_angle * minus_multiplier);
-		else return 0;
+		if (unscaled_angle > 0)
+		{
+			last_angle = (int)(unscaled_angle * plus_multiplier);
+			return last_angle;
+		}
+		else if (unscaled_angle < 0)
+		{
+			last_angle = (int)(unscaled_angle * minus_multiplier);
+			return last_angle;
+		}
+		else
+		{
+			last_angle = 0;
+			return 0;
+		}
 		
 		
 		//return light.getNormalizedLightValue()-balance_point; 
