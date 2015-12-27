@@ -5,21 +5,29 @@ import lejos.nxt.LCD;
 public class Pointer {
 
 	private int xPos;
-	private int row;
+	private int yPos;
+	private char style;
 	
-	public Pointer(int xPos, int row) {
+	public Pointer(int xPos, int yPos, char style) {
 		this.xPos = xPos;
-		this.row = row;
+		this.yPos = yPos;
+		this.style = style;
     }
 	
-	public void setRow(int row) {
-		LCD.clear(this.xPos, this.row, 1);
-		this.row = row;
+	public void setY(int y) {
+		LCD.clear(this.xPos, this.yPos, 1);
+		this.yPos = y;
+		this.render();
+	}
+	
+	public void setX(int x) {
+		LCD.clear(this.xPos, this.yPos, 1);
+		this.xPos = x;
 		this.render();
 	}
 	
 	public void render() {
-		LCD.drawChar('>', this.xPos, this.row);
+		LCD.drawChar(this.style, this.xPos, this.yPos);
 	}
 	
 }

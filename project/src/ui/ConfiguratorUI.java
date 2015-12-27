@@ -14,7 +14,7 @@ public class ConfiguratorUI {
 	
 	public boolean start() {
 		this.displayInterface();
-		Pointer pointer = new Pointer(0, 1);
+		Pointer pointer = new Pointer(0, 1, '>');
 		pointer.render();
 		int selection = 1;
 		
@@ -66,7 +66,7 @@ public class ConfiguratorUI {
 				}
 			}
 			
-			pointer.setRow(selection);	
+			pointer.setY(selection);	
 		}
 	}
 	

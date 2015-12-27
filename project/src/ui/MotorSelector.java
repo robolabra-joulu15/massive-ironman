@@ -9,7 +9,7 @@ public class MotorSelector {
 	private int selection;
 	
 	public MotorSelector(char current) {
-		this.pointer = new Pointer(6, (int)current - 62); //A=65, 65-62=3. B -> 4, C -> 5 etc.
+		this.pointer = new Pointer(6, (int)current - 62, '>'); //A=65, 65-62=3. B -> 4, C -> 5 etc.
 		this.selection = 3;
     }
 	
@@ -30,7 +30,7 @@ public class MotorSelector {
 				if (this.selection > 5) this.selection = 3;
 			}
 			
-			this.pointer.setRow(this.selection);	
+			this.pointer.setY(this.selection);	
 		}
 	}
 	
