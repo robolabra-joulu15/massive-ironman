@@ -1,0 +1,1 @@
+Ei vielä mitään valmiina, mutta idea on selkeä ja moottoreita ja koodia testailtu. Aluksi oli hankaluuksia yhdistää brick koneeseen, koska virtualboxin kautta ei ilmeisesti onnistunut. Alkuvaiheessa vielä robotin kanssa, tavoitteena olisi tehdä kirjoittava robotti.
