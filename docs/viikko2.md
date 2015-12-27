@@ -18,10 +18,10 @@ Viime viikolla määrittelemistäni "ensi viikon suunnitelmista" poikkesin huoma
 
 Muutama kuva projektin tilanteesta!
 
+![LightValueSelector](https://raw.githubusercontent.com/TheDuckFIN/massive-ironman/master/pictures/lightvalueselector.jpg)
 ![Main](https://raw.githubusercontent.com/TheDuckFIN/massive-ironman/master/pictures/main.jpg)
 ![MotorSelector](https://raw.githubusercontent.com/TheDuckFIN/massive-ironman/master/pictures/motorselector.jpg)
 ![NumberSelector](https://raw.githubusercontent.com/TheDuckFIN/massive-ironman/master/pictures/numberselector.jpg)
-![LightValueSelector](https://raw.githubusercontent.com/TheDuckFIN/massive-ironman/master/pictures/lightvalueselector.jpg)
 ![RoboV1](https://raw.githubusercontent.com/TheDuckFIN/massive-ironman/master/pictures/robotv1.jpg)
 
 ###Ensi viikon suunnitelmat
