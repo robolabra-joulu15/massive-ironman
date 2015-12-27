@@ -1,4 +1,4 @@
-Karkinlajittelurobotin rakennus etenee hyvin. Itse robotti on valmis. Se koostuu kahdesta liukuhihnasta ja lajittelijavarresta. 
+Karkinlajittelurobotin rakennus etenee hyvin. Itse robotti on valmis (kuva on docs- hakemistossa). Se koostuu kahdesta liukuhihnasta ja lajittelijavarresta. 
 Ensimmäinen hihna etenee nykäyksittäin ja syöttää karkkeja toiselle jatkuvasti pyörivälle hihnalle yksi kerrallaan. 
 Toisen hihnan alkupäässä on värintunnistussensori.
 Lajittelijavarsi tönäisee karkit hihnalta oikeisiin lokeroihin värin perusteella. Myös ohjelman perustoiminnallisuudet ovat valmiit.
