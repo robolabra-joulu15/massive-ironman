@@ -4,6 +4,7 @@ import lejos.nxt.Button;
 import lejos.nxt.LCD;
 import lejos.nxt.LightSensor;
 import lejos.nxt.SensorPort;
+import lejos.nxt.Sound;
 
 public class LightValueSelector {
 	
@@ -16,11 +17,12 @@ public class LightValueSelector {
 	}
 	
 	public int select() {
-		LCD.drawString("Press enter key", 1, 1);
+		LCD.drawString("Press any key", 2, 1);
 		LCD.drawString("to select light", 1, 2);
 		LCD.drawString("value for", 4, 3);
-		LCD.drawString("\"" + this.description + "\"", 2, 5);
-		Button.ENTER.waitForPress();
+		LCD.drawString("\"" + this.description + "\"", (16-this.description.length())/2, 5);
+		Button.waitForPress();
+		Sound.beep();
 		
 		return this.light.readValue();	
 	}
