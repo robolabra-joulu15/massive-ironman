@@ -8,3 +8,4 @@ tuli teksti "Boot Error".
 Ideani muovautui siihen että teen robotista enemmänkin aseen tapaisen pallon ampumis robototin.
 Legon kasauksen olen aloittanut mutta ohjelmistoa en ole alkanut kehittämään vielä tällä viikolla.
 Ensi viikon tavoitteina on saada robotti kasaan ja ohjelmisto toimimaan raakaversiona.
+Kuvia projektista: https://goo.gl/photos/kGMX8oMiQ1Cr1scD6
