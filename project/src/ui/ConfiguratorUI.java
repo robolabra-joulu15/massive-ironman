@@ -25,7 +25,35 @@ public class ConfiguratorUI {
 			if (press == Button.ID_ESCAPE) {
 				return false;
 			}else if (press == Button.ID_ENTER) {
-				return true;
+				LCD.clear();
+				
+				if (selection == 1) {
+					//Left motor selection
+					MotorSelector leftMotorSelect = new MotorSelector(this.config.getLeftMotorChar());
+					this.config.setLeftMotor(leftMotorSelect.select());
+				}else if (selection == 2) {
+					//Right motor selection
+					MotorSelector rightMotorSelect = new MotorSelector(this.config.getRightMotorChar());
+					this.config.setRightMotor(rightMotorSelect.select());
+				}else if (selection == 3) {
+					//Line color
+					LightValueSelector lineColorSelect = new LightValueSelector("Line color");
+					this.config.setLineColor(lineColorSelect.select());
+				}else if (selection == 4) {
+					//BG color
+					LightValueSelector bgColorSelect = new LightValueSelector("BG color");
+					this.config.setBackgroundColor(bgColorSelect.select());
+				}else if (selection == 5) {
+					//Move speed
+				}else if (selection == 6) {
+					//Turn speed
+				}else if (selection == 7) {
+					//Start robot
+					return true;
+				}
+				
+				LCD.clear();
+				this.displayInterface();
 			}else if (press == Button.ID_LEFT) {
 				selection--;
 				if (selection < 1) {
