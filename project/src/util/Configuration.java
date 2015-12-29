@@ -22,7 +22,7 @@ public class Configuration {
 	
 	public Configuration() {
 	    //EDIT DEFAULTS HERE
-		this.movementSpeed = 20;
+		this.movementSpeed = 360;
 		this.rotationSpeed = 180;
 		this.leftMotor = Motor.A;
 		this.rightMotor = Motor.B;

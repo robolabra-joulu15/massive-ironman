@@ -13,7 +13,7 @@ public class LineFollower {
 		
 		Configuration config = new Configuration();
 		ConfiguratorUI configUI = new ConfiguratorUI(config);
-		LightSensor light = new LightSensor(SensorPort.S1);
+		LightSensor light = new LightSensor(SensorPort.S1, false);
 		PIDController pid = new PIDController(config, light);
 		
 		//DifferentialPilot pilot = new DifferentialPilot(5.6f, 12.0f, Motor.A, Motor.B);
