@@ -47,6 +47,7 @@ public class PIDController {
 			powerLeft = targetPower + turn;
 			powerRight = targetPower - turn;
 			
+			//set new motor speeds
 			leftMotor.setSpeed(powerLeft);
 			rightMotor.setSpeed(powerRight);
 		}

@@ -11,15 +11,18 @@ public class LineFollower {
 
 	public void start() {
 		
-		Configuration properties = new Configuration();
-		ConfiguratorUI configUI = new ConfiguratorUI(properties);
+		Configuration config = new Configuration();
+		ConfiguratorUI configUI = new ConfiguratorUI(config);
 		LightSensor light = new LightSensor(SensorPort.S1);
+		PIDController pid = new PIDController(config, light);
 		
 		//DifferentialPilot pilot = new DifferentialPilot(5.6f, 12.0f, Motor.A, Motor.B);
 		
 		while(true) {
 			if (!configUI.start()) break;
 			LCD.clear();
+			
+			pid.start();
 		}
 		
 		Sound.beep();
