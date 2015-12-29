@@ -2,6 +2,7 @@ package logic;
 
 import lejos.nxt.Button;
 import lejos.nxt.LightSensor;
+import lejos.nxt.NXTRegulatedMotor;
 import util.Configuration;
 
 public class PIDController {
@@ -18,14 +19,36 @@ public class PIDController {
 		//the average of background and line light values
 		int offset = (this.config.getBackgroundColor() - this.config.getLineColor()) / 2;
 		//target power level (the speed of both motors when going straight forward)
-		int targetPower = this.config.getMovementSpeed();
+		float targetPower = this.config.getMovementSpeed();
 		//Proportional constant
-		int kp = targetPower / (this.config.getBackgroundColor() - offset);
+		float kp = targetPower / (this.config.getBackgroundColor() - offset);
+		
+		//motors
+		NXTRegulatedMotor leftMotor = this.config.getLeftMotor();
+		NXTRegulatedMotor rightMotor = this.config.getRightMotor();
+		
+		//create other variables
+		int lightValue;
+		float error, turn, powerLeft, powerRight;
 		
 		this.light.setFloodlight(true);
+		leftMotor.forward();
+		rightMotor.forward();
 		
 		while(!Button.ESCAPE.isPressed()) {
-			int lightValue = this.light.readValue();
+			lightValue = this.light.readValue();
+			
+			//calculate error value
+			error = lightValue - offset;
+			//calculate turn value
+			turn = kp * error;
+			
+			//calculate motor powers
+			powerLeft = targetPower + turn;
+			powerRight = targetPower - turn;
+			
+			leftMotor.setSpeed(powerLeft);
+			rightMotor.setSpeed(powerRight);
 		}
 		
 		this.light.setFloodlight(false);

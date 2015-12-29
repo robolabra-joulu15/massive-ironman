@@ -1,7 +1,7 @@
 package util;
 
 import lejos.nxt.Motor;
-import lejos.robotics.RegulatedMotor;
+import lejos.nxt.NXTRegulatedMotor;
 
 /*
   
@@ -13,8 +13,8 @@ public class Configuration {
 
 	public int movementSpeed;
 	public int rotationSpeed;
-	public RegulatedMotor leftMotor;
-	public RegulatedMotor rightMotor;
+	public NXTRegulatedMotor leftMotor;
+	public NXTRegulatedMotor rightMotor;
 	public double wheelWidth;
 	public double trackWidth;
 	public int lineColor;
@@ -68,11 +68,11 @@ public class Configuration {
 	    return backgroundColor;
     }
 	
-	public RegulatedMotor getLeftMotor() {
+	public NXTRegulatedMotor getLeftMotor() {
 	    return leftMotor;
     }
 
-	public RegulatedMotor getRightMotor() {
+	public NXTRegulatedMotor getRightMotor() {
 	    return rightMotor;
     }
 	
@@ -104,7 +104,7 @@ public class Configuration {
 	    return wheelWidth;
     }
 	
-	public RegulatedMotor charToMotor(char c) {
+	public NXTRegulatedMotor charToMotor(char c) {
 		if (c == 'A') {
 			return Motor.A;
 		}else if (c == 'B') {
@@ -116,7 +116,7 @@ public class Configuration {
 		}
 	}
 	
-	public char motorToChar(RegulatedMotor motor) {
+	public char motorToChar(NXTRegulatedMotor motor) {
 		if (motor.equals(Motor.A)) {
 			return 'A';
 		}else if (motor.equals(Motor.B)) {
