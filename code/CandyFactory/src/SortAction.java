@@ -36,8 +36,7 @@ class SortAction
 			Delay.msDelay(720);
 			arm.rotateTo(25);
 			Delay.msDelay(500);
-			arm.rotateTo(0);
-			//addColorCount("Green");
+			arm.rotateTo(0);			
 			isValidColor = true;
 
 		}
@@ -45,8 +44,7 @@ class SortAction
 			Delay.msDelay(1600);
 			arm.rotateTo(25);
 			Delay.msDelay(500);
-			arm.rotateTo(0);
-			//addColorCount("Red");
+			arm.rotateTo(0);			
 			isValidColor = true;
 
 		}
@@ -54,8 +52,7 @@ class SortAction
 		else if(color==Color.YELLOW) {
 			arm.rotateTo(25);
 			Delay.msDelay(650);
-			arm.rotateTo(0);
-			//addColorCount("Yellow");
+			arm.rotateTo(0);			
 			isValidColor = true;
 		}
 		else if (color==Color.WHITE) {
