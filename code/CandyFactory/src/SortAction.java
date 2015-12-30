@@ -21,7 +21,7 @@ class SortAction
 
 	}
 
-	
+
 	public HashMap<String, Integer> getColorCount() {
 		return colorCount;
 	}
@@ -31,7 +31,7 @@ class SortAction
 
 		RegulatedMotor feeder = Motor.D;
 		boolean isValidColor = false;
-		
+
 		if (color==Color.GREEN) {
 			Delay.msDelay(720);
 			arm.rotateTo(25);
@@ -62,24 +62,24 @@ class SortAction
 			isValidColor = true;
 		}
 		arm.stop();
-		
-		
+
+
 		if (isValidColor) {
 			addColorCount(color);
 			feeder.backward();
 			Delay.msDelay(220);
 			feeder.stop();			
 		}
-		
+
 		return isValidColor;
-			
+
 	}
 
 
 
 
 	public void addColorCount(int color) {
-		
+
 		String ColorString = ColorEnum.getInstance(color).name();
 		if (colorCount.containsKey(ColorString)) {
 			int pcs = colorCount.get(ColorString) + 1;
