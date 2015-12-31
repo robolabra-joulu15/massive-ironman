@@ -1,9 +1,6 @@
 package util;
 
-import lejos.nxt.Motor;
 import lejos.nxt.MotorPort;
-import lejos.nxt.NXTMotor;
-import lejos.nxt.NXTRegulatedMotor;
 
 /*
   
@@ -14,30 +11,48 @@ import lejos.nxt.NXTRegulatedMotor;
 public class Configuration {
 
 	public int movementSpeed;
-	public MotorPort leftMotor;
-	public MotorPort rightMotor;
+	public MotorPort leftMotorPort;
+	public MotorPort rightMotorPort;
 	public int lineColor;
 	public int backgroundColor;
+	public int PID_kp;
+	public int PID_ki;
+	public int PID_kd;
 	
 	public Configuration() {
 	    //EDIT DEFAULTS HERE
-		this.movementSpeed = 360;
-		this.leftMotor = MotorPort.A;
-		this.rightMotor = MotorPort.B;
+		this.movementSpeed = 20;
+		this.leftMotorPort = MotorPort.A;
+		this.rightMotorPort = MotorPort.B;
 		this.lineColor = 35;
 		this.backgroundColor = 55;
+		this.PID_kp = 10;
+		this.PID_ki = 1;
+		this.PID_kd = 100;
+	}
+	
+	public void setPID_kd(int pIDKd) {
+	    PID_kd = pIDKd;
+    }
+	
+	public void setPID_ki(int pIDKi) {
+	    PID_ki = pIDKi;
+    }
+	
+	public void setPID_kp(int pIDKp) {
+	    PID_kp = pIDKp;
     }
 	
 	public void setBackgroundColor(int backgroundColor) {
 	    this.backgroundColor = backgroundColor;
     }
 	
-	public void setLeftMotor(char motor) {
-	    this.leftMotor = charToMotor(motor);
+	public void setLeftMotorPort(char motor) {
+	    this.leftMotorPort = charToMotorPort(motor);
     }
 
-	public void setRightMotor(char motor) {
-	    this.rightMotor = charToMotor(motor);
+	public void setRightMotorPort(char motor) {
+	    this.rightMotorPort = charToMotorPort(motor);
     }
 	
 	public void setLineColor(int lineColor) {
@@ -52,20 +67,32 @@ public class Configuration {
 	    return backgroundColor;
     }
 	
+	public int getPID_kd() {
+	    return PID_kd;
+    }
+	
+	public int getPID_ki() {
+	    return PID_ki;
+    }
+	
+	public int getPID_kp() {
+	    return PID_kp;
+    }
+	
 	public MotorPort getLeftMotorPort() {
-	    return leftMotor;
+	    return leftMotorPort;
     }
 
 	public MotorPort getRightMotorPort() {
-	    return rightMotor;
+	    return rightMotorPort;
     }
 	
 	public char getLeftMotorPortChar() {
-	    return motorPortToChar(this.leftMotor);
+	    return motorPortToChar(this.leftMotorPort);
     }
 
 	public char getRightMotorPortChar() {
-	    return motorPortToChar(this.rightMotor);
+	    return motorPortToChar(this.rightMotorPort);
     }
 	
 	public int getLineColor() {

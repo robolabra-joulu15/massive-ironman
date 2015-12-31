@@ -30,11 +30,11 @@ public class ConfiguratorUI {
 				if (selection == 1) {
 					//Left motor selection
 					MotorSelector leftMotorSelect = new MotorSelector(this.config.getLeftMotorPortChar());
-					this.config.setLeftMotor(leftMotorSelect.select());
+					this.config.setLeftMotorPort(leftMotorSelect.select());
 				}else if (selection == 2) {
 					//Right motor selection
 					MotorSelector rightMotorSelect = new MotorSelector(this.config.getRightMotorPortChar());
-					this.config.setRightMotor(rightMotorSelect.select());
+					this.config.setRightMotorPort(rightMotorSelect.select());
 				}else if (selection == 3) {
 					//Line color selection
 					LightValueSelector lineColorSelect = new LightValueSelector("Line color");
@@ -76,12 +76,12 @@ public class ConfiguratorUI {
 	private void displayInterface() {
 		//Display texts
 		LCD.drawString("Config", 0, 0);
-		LCD.drawString("L motor: ", 1, 1);
-		LCD.drawString("R motor: ", 1, 2);
+		LCD.drawString("Left motor: ", 1, 1);
+		LCD.drawString("Right motor: ", 1, 2);
 		LCD.drawString("Line color: ", 1, 3);
 		LCD.drawString("BG color: ", 1, 4);
-		LCD.drawString("Movespeed: ", 1, 5);
-		LCD.drawString("Configure PID", 1, 6);
+		LCD.drawString("Move speed: ", 1, 5);
+		LCD.drawString("CONFIGURE PID", 1, 6);
 		LCD.drawString("START! ", 1, 7);
 		
 		//Display values
@@ -91,5 +91,4 @@ public class ConfiguratorUI {
 		LCD.drawInt(this.config.getBackgroundColor(), 13, 4);
 		LCD.drawInt(this.config.getMovementSpeed(), 13, 5);
 	}
-	
 }
