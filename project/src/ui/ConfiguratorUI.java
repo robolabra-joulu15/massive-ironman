@@ -29,11 +29,11 @@ public class ConfiguratorUI {
 				
 				if (selection == 1) {
 					//Left motor selection
-					MotorSelector leftMotorSelect = new MotorSelector(this.config.getLeftMotorChar());
+					MotorSelector leftMotorSelect = new MotorSelector(this.config.getLeftMotorPortChar());
 					this.config.setLeftMotor(leftMotorSelect.select());
 				}else if (selection == 2) {
 					//Right motor selection
-					MotorSelector rightMotorSelect = new MotorSelector(this.config.getRightMotorChar());
+					MotorSelector rightMotorSelect = new MotorSelector(this.config.getRightMotorPortChar());
 					this.config.setRightMotor(rightMotorSelect.select());
 				}else if (selection == 3) {
 					//Line color selection
@@ -49,8 +49,7 @@ public class ConfiguratorUI {
 					this.config.setMovementSpeed(moveSpeedSelect.select());
 				}else if (selection == 6) {
 					//Turn speed selection
-					NumberSelector rotationSpeedSelector = new NumberSelector(3, this.config.getRotationSpeed());
-					this.config.setRotationSpeed(rotationSpeedSelector.select());
+					
 				}else if (selection == 7) {
 					//Start robot
 					return true;
@@ -77,21 +76,20 @@ public class ConfiguratorUI {
 	private void displayInterface() {
 		//Display texts
 		LCD.drawString("Config", 0, 0);
-		LCD.drawString("Left motor: ", 1, 1);
-		LCD.drawString("Right motor: ", 1, 2);
+		LCD.drawString("L motor: ", 1, 1);
+		LCD.drawString("R motor: ", 1, 2);
 		LCD.drawString("Line color: ", 1, 3);
 		LCD.drawString("BG color: ", 1, 4);
-		LCD.drawString("Move speed: ", 1, 5);
-		LCD.drawString("Turn speed: ", 1, 6);
+		LCD.drawString("Movespeed: ", 1, 5);
+		LCD.drawString("Configure PID", 1, 6);
 		LCD.drawString("START! ", 1, 7);
 		
 		//Display values
-		LCD.drawChar(this.config.getLeftMotorChar(), 14, 1);
-		LCD.drawChar(this.config.getRightMotorChar(), 14, 2);
+		LCD.drawChar(this.config.getLeftMotorPortChar(), 14, 1);
+		LCD.drawChar(this.config.getRightMotorPortChar(), 14, 2);
 		LCD.drawInt(this.config.getLineColor(), 13, 3);
 		LCD.drawInt(this.config.getBackgroundColor(), 13, 4);
 		LCD.drawInt(this.config.getMovementSpeed(), 13, 5);
-		LCD.drawInt(this.config.getRotationSpeed(), 13, 6);
 	}
 	
 }

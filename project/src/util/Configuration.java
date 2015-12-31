@@ -1,6 +1,8 @@
 package util;
 
 import lejos.nxt.Motor;
+import lejos.nxt.MotorPort;
+import lejos.nxt.NXTMotor;
 import lejos.nxt.NXTRegulatedMotor;
 
 /*
@@ -12,22 +14,16 @@ import lejos.nxt.NXTRegulatedMotor;
 public class Configuration {
 
 	public int movementSpeed;
-	public int rotationSpeed;
-	public NXTRegulatedMotor leftMotor;
-	public NXTRegulatedMotor rightMotor;
-	public double wheelWidth;
-	public double trackWidth;
+	public MotorPort leftMotor;
+	public MotorPort rightMotor;
 	public int lineColor;
 	public int backgroundColor;
 	
 	public Configuration() {
 	    //EDIT DEFAULTS HERE
 		this.movementSpeed = 360;
-		this.rotationSpeed = 180;
-		this.leftMotor = Motor.A;
-		this.rightMotor = Motor.B;
-		this.wheelWidth = 5.6;
-		this.trackWidth = 12.0;
+		this.leftMotor = MotorPort.A;
+		this.rightMotor = MotorPort.B;
 		this.lineColor = 35;
 		this.backgroundColor = 55;
     }
@@ -52,36 +48,24 @@ public class Configuration {
 	    this.movementSpeed = movementSpeed;
     }
 	
-	public void setRotationSpeed(int rotationSpeed) {
-	    this.rotationSpeed = rotationSpeed;
-    }
-	
-	public void setTrackWidth(double trackWidth) {
-	    this.trackWidth = trackWidth;
-    }
-	
-	public void setWheelWidth(double wheelWidth) {
-	    this.wheelWidth = wheelWidth;
-    }
-	
 	public int getBackgroundColor() {
 	    return backgroundColor;
     }
 	
-	public NXTRegulatedMotor getLeftMotor() {
+	public MotorPort getLeftMotorPort() {
 	    return leftMotor;
     }
 
-	public NXTRegulatedMotor getRightMotor() {
+	public MotorPort getRightMotorPort() {
 	    return rightMotor;
     }
 	
-	public char getLeftMotorChar() {
-	    return motorToChar(this.leftMotor);
+	public char getLeftMotorPortChar() {
+	    return motorPortToChar(this.leftMotor);
     }
 
-	public char getRightMotorChar() {
-	    return motorToChar(this.rightMotor);
+	public char getRightMotorPortChar() {
+	    return motorPortToChar(this.rightMotor);
     }
 	
 	public int getLineColor() {
@@ -92,36 +76,24 @@ public class Configuration {
 	    return movementSpeed;
     }
 	
-	public int getRotationSpeed() {
-	    return rotationSpeed;
-    }
-	
-	public double getTrackWidth() {
-	    return trackWidth;
-    }
-	
-	public double getWheelWidth() {
-	    return wheelWidth;
-    }
-	
-	public NXTRegulatedMotor charToMotor(char c) {
+	public MotorPort charToMotorPort(char c) {
 		if (c == 'A') {
-			return Motor.A;
+			return MotorPort.A;
 		}else if (c == 'B') {
-			return Motor.B;
+			return MotorPort.B;
 		}else if (c == 'C') {
-			return Motor.C;
+			return MotorPort.C;
 		}else {
 			return null;
 		}
 	}
 	
-	public char motorToChar(NXTRegulatedMotor motor) {
-		if (motor.equals(Motor.A)) {
+	public char motorPortToChar(MotorPort port) {
+		if (port.equals(MotorPort.A)) {
 			return 'A';
-		}else if (motor.equals(Motor.B)) {
+		}else if (port.equals(MotorPort.B)) {
 			return 'B';
-		}else if (motor.equals(Motor.C)) {
+		}else if (port.equals(MotorPort.C)) {
 			return 'C';
 		}else {
 			return '0';
