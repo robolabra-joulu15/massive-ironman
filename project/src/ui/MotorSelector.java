@@ -10,7 +10,7 @@ public class MotorSelector {
 	
 	public MotorSelector(char current) {
 		this.pointer = new Pointer(6, (int)current - 62, '>'); //A=65, 65-62=3. B -> 4, C -> 5 etc.
-		this.selection = 3;
+		this.selection = (int)current - 62;
     }
 	
 	public char select() {

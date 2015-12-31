@@ -48,8 +48,11 @@ public class ConfiguratorUI {
 					NumberSelector moveSpeedSelect = new NumberSelector(3, this.config.getMovementSpeed());
 					this.config.setMovementSpeed(moveSpeedSelect.select());
 				}else if (selection == 6) {
-					//Turn speed selection
-					
+					//PID configurator
+					PIDConfiguratorUI pidConfig = new PIDConfiguratorUI(this.config);
+					if (pidConfig.start()) {
+						return true;
+					}
 				}else if (selection == 7) {
 					//Start robot
 					return true;
