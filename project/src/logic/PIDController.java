@@ -17,15 +17,15 @@ public class PIDController {
 	
 	public void start() {
 		//the average of background and line light values
-		int offset = (this.config.getBackgroundColor() - this.config.getLineColor()) / 2;
+		int offset = (this.config.getBackgroundColor() + this.config.getLineColor()) / 2;
 		//target power level (the speed of both motors when going straight forward)
 		int targetPower = this.config.getMovementSpeed();
 		//Proportional constant
-		int kp = this.config.getPID_kp();
+		double kp = this.config.getPID_kp();
 		//Integral constant
-		int ki = this.config.getPID_ki();
+		double ki = this.config.getPID_ki();
 		//Derivative constant
-		int kd = this.config.getPID_kd();
+		double kd = this.config.getPID_kd();
 		
 		//motors
 		NXTMotor leftMotor = new NXTMotor(this.config.getLeftMotorPort());
@@ -33,8 +33,8 @@ public class PIDController {
 		
 		//create other variables
 		int lightValue;
-		int error, turn, powerLeft, powerRight;
-		int lastError = 0, integral = 0, derivative = 0;
+		double error, turn, powerLeft, powerRight;
+		double lastError = 0, integral = 0, derivative = 0;
 		
 		this.light.setFloodlight(true);
 		
@@ -59,18 +59,18 @@ public class PIDController {
 			
 			//set new motor speeds
 			if (powerLeft > 0) {
-				leftMotor.setPower(powerLeft);
+				leftMotor.setPower((int)powerLeft);
 				leftMotor.forward();
 			}else {
-				leftMotor.setPower(-powerLeft);
+				leftMotor.setPower(-(int)powerLeft);
 				leftMotor.backward();
 			}
 			
 			if (powerRight > 0) {
-				rightMotor.setPower(powerRight);
+				rightMotor.setPower((int)powerRight);
 				rightMotor.forward();
 			}else {
-				rightMotor.setPower(-powerRight);
+				rightMotor.setPower(-(int)powerRight);
 				rightMotor.backward();
 			}
 			

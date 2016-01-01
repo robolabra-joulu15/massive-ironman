@@ -15,9 +15,9 @@ public class Configuration {
 	public MotorPort rightMotorPort;
 	public int lineColor;
 	public int backgroundColor;
-	public int PID_kp;
-	public int PID_ki;
-	public int PID_kd;
+	public double PID_kp;
+	public double PID_ki;
+	public double PID_kd;
 	
 	public Configuration() {
 	    //EDIT DEFAULTS HERE
@@ -26,9 +26,9 @@ public class Configuration {
 		this.rightMotorPort = MotorPort.B;
 		this.lineColor = 35;
 		this.backgroundColor = 55;
-		this.PID_kp = 10;
-		this.PID_ki = 1;
-		this.PID_kd = 100;
+		this.PID_kp = 1.2;
+		this.PID_ki = 0.0008;
+		this.PID_kd = 5;
 	}
 	
 	public void setPID_kd(int pIDKd) {
@@ -67,15 +67,15 @@ public class Configuration {
 	    return backgroundColor;
     }
 	
-	public int getPID_kd() {
+	public double getPID_kd() {
 	    return PID_kd;
     }
 	
-	public int getPID_ki() {
+	public double getPID_ki() {
 	    return PID_ki;
     }
 	
-	public int getPID_kp() {
+	public double getPID_kp() {
 	    return PID_kp;
     }
 	
