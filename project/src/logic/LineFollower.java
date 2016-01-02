@@ -22,7 +22,7 @@ public class LineFollower {
 			LCD.clear();
 			
 			if (valueChecker.check()) {
-				//pid.start();
+				pid.start();
 			}
 		}
 		
