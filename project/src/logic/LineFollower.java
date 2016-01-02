@@ -15,12 +15,15 @@ public class LineFollower {
 		ConfiguratorUI configUI = new ConfiguratorUI(config);
 		LightSensor light = new LightSensor(SensorPort.S1, false);
 		PIDController pid = new PIDController(config, light);
+		ValueChecker valueChecker = new ValueChecker(config);
 		
 		while(true) {
 			if (!configUI.start()) break;
 			LCD.clear();
 			
-			pid.start();
+			if (valueChecker.check()) {
+				//pid.start();
+			}
 		}
 		
 		Sound.beep();
