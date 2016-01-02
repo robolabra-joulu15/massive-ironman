@@ -16,8 +16,6 @@ public class LineFollower {
 		LightSensor light = new LightSensor(SensorPort.S1, false);
 		PIDController pid = new PIDController(config, light);
 		
-		//DifferentialPilot pilot = new DifferentialPilot(5.6f, 12.0f, Motor.A, Motor.B);
-		
 		while(true) {
 			if (!configUI.start()) break;
 			LCD.clear();

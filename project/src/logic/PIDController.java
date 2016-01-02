@@ -13,7 +13,7 @@ public class PIDController {
 	public PIDController(Configuration config, LightSensor light) {
 	    this.config = config;
 	    this.light = light;
-    }
+	}
 	
 	public void start() {
 		//the average of background and line light values

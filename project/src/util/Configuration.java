@@ -31,15 +31,15 @@ public class Configuration {
 		this.PID_kd = 5;
 	}
 	
-	public void setPID_kd(int pIDKd) {
+	public void setPID_kd(double pIDKd) {
 	    PID_kd = pIDKd;
     }
 	
-	public void setPID_ki(int pIDKi) {
+	public void setPID_ki(double pIDKi) {
 	    PID_ki = pIDKi;
     }
 	
-	public void setPID_kp(int pIDKp) {
+	public void setPID_kp(double pIDKp) {
 	    PID_kp = pIDKp;
     }
 	

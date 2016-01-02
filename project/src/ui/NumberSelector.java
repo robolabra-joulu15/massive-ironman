@@ -10,14 +10,21 @@ public class NumberSelector {
 	private Pointer pointer;
 	private int firstNumberX;
 	private int currentSelection;
+	private int pointerLocation;
+	private int decimals;
 	
-	public NumberSelector(int numbers, int value) {
-		this.numbers = NumberArrayTools.numberToArray(numbers, value);
-		this.firstNumberX = (16 - numbers) / 2;
-		this.pointer = new Pointer(this.firstNumberX, 6, '^');
+	public NumberSelector(int numbers, double value) {
+		this(numbers, value, 0);
 	}
 	
-	public int select() {
+	public NumberSelector(int numbers, double value, int decimals) {
+		this.numbers = NumberArrayTools.numberToArray(numbers, value, decimals);
+		this.firstNumberX = (16 - numbers) / 2;
+		this.pointer = new Pointer(this.firstNumberX, 6, '^');
+		this.decimals = decimals;
+	}
+	
+	public double select() {
 		this.render();
 		this.pointer.render();
 		
@@ -26,19 +33,37 @@ public class NumberSelector {
 			
 			if (key == Button.ID_LEFT) {
 				this.currentSelection--;
-				if (this.currentSelection < 0) this.currentSelection = this.numbers.length-1;
+				this.pointerLocation--;
+				
+				if (this.currentSelection == this.numbers.length - this.decimals - 1) this.pointerLocation--;
+				
+				if (this.currentSelection < 0) {
+					this.currentSelection = this.numbers.length-1;
+					if (this.decimals > 0) {
+						this.pointerLocation = this.numbers.length;
+					}else {
+						this.pointerLocation = this.numbers.length-1;
+					}
+				}
 			}else if (key == Button.ID_RIGHT) {
 				this.currentSelection++;
-				if (this.currentSelection >= this.numbers.length) this.currentSelection = 0;
+				this.pointerLocation++;
+				
+				if (this.currentSelection == this.numbers.length - this.decimals) this.pointerLocation++;
+				
+				if (this.currentSelection >= this.numbers.length) { 
+					this.currentSelection = 0;
+					this.pointerLocation = 0;
+				}
 			}else if (key == Button.ID_ENTER) {
 				this.numbers[this.currentSelection]++;
 				if (this.numbers[this.currentSelection] > 9) this.numbers[this.currentSelection] = 0;
 			}else if (key == Button.ID_ESCAPE) {
-				return NumberArrayTools.arrayToNumber(this.numbers);
+				return NumberArrayTools.arrayToNumber(this.numbers, this.decimals);
 			}
 			
 			this.renderNumbers();
-			this.pointer.setX(this.firstNumberX + this.currentSelection);
+			this.pointer.setX(this.firstNumberX + this.pointerLocation);
 		}
 	}
 	
@@ -49,8 +74,14 @@ public class NumberSelector {
 	
 	private void renderNumbers() {
 		LCD.clear(this.firstNumberX, 5, this.numbers.length);
+		int add = 0;
+		
 		for (int i = 0; i < this.numbers.length; i++) {
-			LCD.drawInt(this.numbers[i], this.firstNumberX + i, 5);
+			if (i == this.numbers.length - this.decimals) {
+				LCD.drawChar(',', this.firstNumberX + i, 5);
+				add = 1;
+			}
+			LCD.drawInt(this.numbers[i], this.firstNumberX + i + add, 5);
 		}
 	}
 	

@@ -28,15 +28,15 @@ private Configuration config;
 				
 				if (selection == 1) {
 					//Select p constant
-					NumberSelector kpSelect = new NumberSelector(3, (int)this.config.getPID_kp());
+					NumberSelector kpSelect = new NumberSelector(10, this.config.getPID_kp(), 5);
 					this.config.setPID_kp(kpSelect.select());
 				}else if (selection == 2) {
 					//Select i constant
-					NumberSelector kiSelect = new NumberSelector(3, (int)this.config.getPID_ki());
+					NumberSelector kiSelect = new NumberSelector(10, this.config.getPID_ki(), 5);
 					this.config.setPID_ki(kiSelect.select());
 				}else if (selection == 3) {
 					//Select d constant
-					NumberSelector kdSelect = new NumberSelector(3, (int)this.config.getPID_kd());
+					NumberSelector kdSelect = new NumberSelector(10, this.config.getPID_kd(), 5);
 					this.config.setPID_kd(kdSelect.select());
 				}else if (selection == 4) {
 					//Back!
@@ -74,8 +74,8 @@ private Configuration config;
 		LCD.drawString("START! ", 1, 5);
 		
 		//Display values
-		/*LCD.drawInt(this.config.getPID_kp(), 5, 1);
-		LCD.drawInt(this.config.getPID_ki(), 5, 2);
-		LCD.drawInt(this.config.getPID_kd(), 5, 3);*/
+		LCD.drawString(String.valueOf(this.config.getPID_kp()), 5, 1);
+		LCD.drawString(String.valueOf(this.config.getPID_ki()), 5, 2);
+		LCD.drawString(String.valueOf(this.config.getPID_kd()), 5, 3);
 	}
 }

@@ -46,7 +46,7 @@ public class ConfiguratorUI {
 				}else if (selection == 5) {
 					//Move speed selection
 					NumberSelector moveSpeedSelect = new NumberSelector(3, this.config.getMovementSpeed());
-					this.config.setMovementSpeed(moveSpeedSelect.select());
+					this.config.setMovementSpeed((int)moveSpeedSelect.select());
 				}else if (selection == 6) {
 					//PID configurator
 					PIDConfiguratorUI pidConfig = new PIDConfiguratorUI(this.config);
