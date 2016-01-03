@@ -1,5 +1,3 @@
-# massive-ironman
+# Kitarabotti
 
-Joulun robolabran 2015 pohja
-
-Ohjaus verkossa: #robolabra @ ircnet
+Nimensä mukaisesti kitaraa soittava robotti.
