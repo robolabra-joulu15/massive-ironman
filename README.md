@@ -1,5 +1,4 @@
-# massive-ironman
+#Rangaistuspotku
 
-Joulun robolabran 2015 pohja
-
-Ohjaus verkossa: #robolabra @ ircnet
+Robottiohjelmoinnin harjoitustyönä on jalkapallon rangaistuspotkun simuloiminen.
+Tähän kuuluu maalivahti ja jalkapallon potkaisija.
