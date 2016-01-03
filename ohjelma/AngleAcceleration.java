@@ -1,4 +1,10 @@
 
+/**
+ * tuppeli
+ * 
+ * @author hexvaara
+ *
+ */
 public class AngleAcceleration {
 
 	private int angle;

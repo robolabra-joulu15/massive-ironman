@@ -1,7 +1,11 @@
 import lejos.nxt.MotorPort;
 import lejos.nxt.NXTRegulatedMotor;
 
-
+/**
+ * self describing class for controlling two nxt motors as a clone of each other.
+ * @author hexvaara
+ *
+ */
 public class MotorController2 {
 
 	private NXTRegulatedMotor m1;
@@ -17,8 +21,6 @@ public class MotorController2 {
 	{
 		m1.setSpeed(speed);
 		m2.setSpeed(speed);
-		
-		
 		
 		m1.forward();
 		m2.forward();
@@ -40,5 +42,4 @@ public class MotorController2 {
 		m1.flt();
 		m2.flt();
 	}
-	
 }

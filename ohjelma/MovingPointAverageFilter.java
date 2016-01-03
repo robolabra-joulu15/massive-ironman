@@ -1,3 +1,14 @@
+/**
+ * A moving point average filter for smoothing the values from sensors.
+ * can return a floored integer value or more accurate floating point number.
+ * size of cache is determined in constructor.
+ * 
+ * for people who are unfamiliar with moving point average, basic idea is to count average from n values in input signal in O(1) time with O(n) lag.
+ * 
+ * @author hexvaara
+ *
+ */
+
 
 public class MovingPointAverageFilter {
 
@@ -34,8 +45,6 @@ public class MovingPointAverageFilter {
 		sum += input;
 		index += 1;
 		
-		//average = sum/ cache_size;
 		return (float) sum / (float) cache_size;
 	}
-	
 }

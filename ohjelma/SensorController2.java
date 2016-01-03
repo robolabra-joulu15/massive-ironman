@@ -1,5 +1,15 @@
 import lejos.nxt.*;
 
+/**
+ * reads sensor data and conducts values from it:
+ * 		angle from -100 to 100
+ * 		acceleration from int_min_value to int_max_value. (typically between -100 and 100)
+ * 
+ * 		
+ * @author hexvaara
+ *
+ */
+
 public class SensorController2 {
 
 	private LightSensor ls;
@@ -26,6 +36,9 @@ public class SensorController2 {
 		max_acceleration = 0;
 	}
 	
+	/**
+	 * for debugging purposes, prints sensor values and conducted values.
+	 */
 	public void lcdPrint()
 	{
 		LCD.clear();
@@ -38,12 +51,20 @@ public class SensorController2 {
 		LCD.drawString("maxAcc : "+max_acceleration, 1, 7);
 	}
 	
+	/**
+	 * reads raw value from light sensor, returns and saves it in variable.
+	 * @return
+	 */
 	private int raw()
 	{
 		last_read_light_value = ls.getNormalizedLightValue();
 		return last_read_light_value;
 	}
 	
+	
+	/**
+	 * calibration functions, cal_finally determines the scale of sensor values.
+	 */
 	public void cal_nose_down()
 	{
 		raw_min = raw();
@@ -63,11 +84,13 @@ public class SensorController2 {
 		
 		positive_scalar = 100.0f / positive_scale;
 		negative_scalar = 100.0f / negative_scale;
-		
 	}
 	
-	
-	public AngleAcceleration get() // returns angle from -100 to 100
+	/**
+	 * returns class of AngleAcceleration where the current angle and tilting speed of robot is present. values for angle -100 to 100.
+	 * @return
+	 */
+	public AngleAcceleration get()
 	{
 		int raw_zero_biased = filter.filter(raw())-raw_balance;
 		int current_angle;
@@ -81,7 +104,6 @@ public class SensorController2 {
 		last_read_angle = current_angle;
 		
 		if (Math.abs(acceleration) > max_acceleration) max_acceleration = acceleration;
-		
 		
 		return new AngleAcceleration(current_angle, acceleration);
 	}

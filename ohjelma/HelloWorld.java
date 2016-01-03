@@ -2,56 +2,37 @@ import lejos.nxt.*;
 
 public class HelloWorld
 {
-  public static void main (String[] aArg)
-  throws Exception
+  public static void main (String[] aArg) throws Exception
   {
 	  
-	  //CorrectionMap m = new CorrectionMap();
+	  //debug();
+	  
+	  run();
+  }
+  
+  public static void debug() throws InterruptedException
+  {
+	  CorrectionMap m = new CorrectionMap();
 	  
 	  //System.out.println(m.getMotorSpeed(10, -20));
 	  
-	  //m.printf();
-	  //m.printAngleMap();
-	  //m.printSpeedMap();
-	  
-	  run();
-	  
-	  
-	  
-	  
-	  
-//	  MotorController2 m = new MotorController2();
-//	  
-//	  while ( true )
-//	  {	  
-//	  for ( int i = 0; i < 1000; i += 2)
-//	  {
-//		  m.backward(i);
-//		  Thread.sleep(20);
-//	  }
-//	  for ( int i = 1000; i > 0; i -=2)
-//	  {
-//		  m.backward(i);
-//		  Thread.sleep(20);
-//	  }
-//	  for ( int i = 0; i < 1000; i += 2)
-//	  {
-//		  m.forward(i);
-//		  Thread.sleep(20);
-//	  }
-//	  for ( int i = 1000; i > 0; i -= 2)
-//	  {
-//		  m.forward(i);
-//		  Thread.sleep(20);
-//	  }
-//	  }
-	  
-	  
-	  
-	  
-	  
+	  m.printf();
+	  m.printAngleMap();
+	  m.printSpeedMap();
   }
   
+  
+  
+  /**
+   * starts the robot, assuming its tilted nose up, calibration starts recording sensor value when nose up, then asks by lowering beep sequence to place the nose down and it records the nose down sensor value.
+   * finally after one beep robot must be placed in balance for recording sensor value for balance.
+   * 
+   * this all must be done for causes of errors by varying light conditions.
+   * 
+   * finally robot starts balancing program.
+   * 
+   * @throws InterruptedException
+   */
   public static void run() throws InterruptedException
   {
 	  SensorController2 s = new SensorController2();
@@ -61,19 +42,20 @@ public class HelloWorld
 	  
 	  Thread.sleep(1000);
 	  
-	  //s.calibrateNoseUp();
+	  // calibrate nose up, place robot nose up.
 	  s.cal_nose_up();
 	  Sound.buzz();
 	  Sound.beepSequence();
 	  Thread.sleep(3000);
-	  //s.calibrateNoseDown();
+	  
+	  // calibrate nose down, place robot nose down.
 	  s.cal_nose_down();
 	  Sound.buzz();
 	  Sound.beep();
 	  Thread.sleep(5000);
 
 	  
-	  //s.calibrateBalancePoint();
+	  // calibrate balance point, hold robot in balance.
 	  s.cal_bal();
 	  Sound.beepSequence();
 	  s.cal_finally();
