@@ -1,5 +1,3 @@
 # massive-ironman
 
-Joulun robolabran 2015 pohja
-
-Ohjaus verkossa: #robolabra @ ircnet
+"BB-8", theme of the day?
