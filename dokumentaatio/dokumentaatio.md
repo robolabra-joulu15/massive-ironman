@@ -12,3 +12,7 @@ ohjelmasta 3. iteraatio. koodia on atm neljä luokkaa, alkaa jo hieman näyttä�
 #viikko2:
 
 fyysinen robotti alkaa olla lopullisessa muodossaan, joskin painopistettä joutuu ehkä vielä muuttamaan korkeussuunnassa. Ohjelmassa on nykyään jo useampi luokka ja tasapainon pitämiseen käytän tällä hetkellä kolmiulotteista korjausliikkeiden karttaa joka muistuttaa x^3 funktiota josta on projektoitu taso korjauskartalle suunnassa kulmasta kulmaan. laite ei vielä täysin pysy pystyssä, mutta heikolla otteella 40cm etäisyydellä usb johdosta tuettuna vekotin jo pysyy pystyssä. Ilman tukea noin kaksi sekuntia. Korjausliikkeille tällä hetkellä oleva staattinen kolmiulotteinen kartta ei ehkä ihan riitä robotin pystyssä pysymiseen, sillä myös laitteen maanopeus vaikuttaa korjausliikkeen suuruuteen, puhumattakaan mikäli painopisteeseen tulisi massamuutoksia. Algoritmi nykymuodossaan esilaskee 21*21 kokoisen int mapin ja tekee 200 paikkaiset hajautustaulut jotta hidas nxt ei joutuisi laskemaan arvoja ja kaikki korjausliikkeet löytyisivät vakioajassa käyttömuistista.
+
+#viikko3:
+
+edistystä ei niin hirveästi ole tapahtunut, myin välipäivät raketteja yli 10 tuntisia päiviä ja uv-aattona oli ystäväni hääjuhlat. koodi on kuitenkin nyt siistitty ja kommentoitu kattavasti sekä olen päässäni miettinyt miten implementoin maanopeuden vaikutuksen korjausliikkeen suuruuteen.
