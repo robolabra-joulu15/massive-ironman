@@ -11,4 +11,11 @@ Videolla robotti käyttää asetuksia MoveSpeed=40, kp=4.2, ki=0.0008 ja kd=3.0.
 
 Muokkasin myös tällä viikolla hieman UI:ta: poistin rotation speedin turhana ja lisäsin valikon PID-kontrollerin säädöille. Lisäksi tein Error-käyttöliittymäkomponentin ja logiikkaosioon olion, joka tarkistaa onko kaikki arvot kuten pitää (moottorit eivät saa olla samat, movement speed tulee olla väliltä 1-100). Alla muutama kuva.
 
-Ohjelmointiympäristön puutteet tulivat jälleen vastaan tällä viikolla, kun String.format(), String.split() sekä DecimalFormat-luokka eivät kuuluneet 
+![Main_New](https://raw.githubusercontent.com/TheDuckFIN/massive-ironman/master/pictures/main_new.jpg)
+![NumberSelector](https://raw.githubusercontent.com/TheDuckFIN/massive-ironman/master/pictures/numberselector_double.jpg)
+![PidConfig](https://raw.githubusercontent.com/TheDuckFIN/massive-ironman/master/pictures/pidconfig.jpg)
+
+Ohjelmointiympäristön puutteet tulivat jälleen vastaan tällä viikolla, kun metodeita String.format(), String.split() sekä DecimalFormat-luokkaa ei ollut olemassa. Tämän vuoksi doublen muotoilu haluamallani tavalla ei oikein onnistunut (8.0E-4 -> 0.0008), mutta se on loppujenlopuksi aika pikkujuttu. String.splitin puuttuminen aiheutti sen, että jouduin tekemään rivittäjä-apumetodin String.indexOf:n ja String.substringin avulla.
+
+###Seuraavan viikon suunnitelmat
+Luen koodia läpi ja pyrin refaktoroimaan sitä tarpeen tullen. Voisin myös heittää muutamia kommentteja sekaan selkeyden lisäämiseksi. Yritän myös löytää PID-kontrollerille mahdollisimman toimivat arvot suuremmilla nopeuksilla. NumberSelectorissa on myös pieni bugi, joka voi johtua varsin hyvin doublen epätarkkuudesta (esim. 4.2 muuttuu 4.19999:ksi), enkä ole varma voiko sille oikeastaan mitään fiksua tehdä johtuen tavasta, millä numerot muutetaan taulukoksi ja takaisin (util/NumberArrayTools.java). Yritän kuitenkin tutkia mahdollista korjaustapaa. Lisäksi yritän parannella PID-kontrolleria, että se toimisi esimerkiksi risteyksissä. En ole kuitenkaan varma osaanko tätä toteuttaa, sillä PID-kontrollerin saaminen toimimaan sillä tavalla, miten se nyt toimii oli minulle jo iso erävoitto, sillä en ymmärrä tarkalleen edelleenkään esimerkiksi miten vakioiden kp, ki ja kd muuttaminen vaikuttaa toimintaan :D
