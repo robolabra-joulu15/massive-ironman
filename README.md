@@ -1,3 +1,3 @@
 # Kitarabotti
 
-WP
+Nimensä mukaisesti kitaraa soittava robotti.
