@@ -15,4 +15,4 @@ fyysinen robotti alkaa olla lopullisessa muodossaan, joskin painopistettä joutu
 
 #viikko3:
 
-edistystä ei niin hirveästi ole tapahtunut, myin välipäivät raketteja yli 10 tuntisia päiviä ja uv-aattona oli ystäväni hääjuhlat. koodi on kuitenkin nyt siistitty ja kommentoitu kattavasti sekä olen päässäni miettinyt miten implementoin maanopeuden vaikutuksen korjausliikkeen suuruuteen.
+edistystä ei niin hirveästi ole tapahtunut, myin välipäivät raketteja yli 10 tuntisia päiviä ja uv-aattona oli ystäväni hääjuhlat. koodi on kuitenkin nyt siistitty ja kommentoitu kattavasti sekä olen päässäni miettinyt miten implementoin maanopeuden vaikutuksen korjausliikkeen suuruuteen. ennen perjantain demoa se on implementoitu ja katsotaan saanko tuon pysymään pystyssä, ainakin perus idea on auennut.
