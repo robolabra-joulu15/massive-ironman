@@ -1,5 +1,3 @@
-# massive-ironman
+#Line following robot
 
-Joulun robolabran 2015 pohja
-
-Ohjaus verkossa: #robolabra @ ircnet
+This is a line following robot created using Lego Mindstorms NXT 1.0 kit and LeJOS firmware (Java). School project. 
