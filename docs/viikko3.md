@@ -1,0 +1,1 @@
+Rakentaminen aloitettu, tavoitteena mahdollistaa tussille liikkuminen x-, y- ja z-akseleilla. Haasteena x-akselin sisällyttäminen. Lisäksi pitää miettiä miten robotti pitää tussia. Epäilyttää tuleeko pahasti kiire, en ole aloittanut koodausta. 
