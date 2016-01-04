@@ -11,6 +11,7 @@ public class LineFollower {
 
 	public void start() {
 		
+		//Initialize general objects
 		Configuration config = new Configuration();
 		ConfiguratorUI configUI = new ConfiguratorUI(config);
 		LightSensor light = new LightSensor(SensorPort.S1, false);
@@ -18,10 +19,13 @@ public class LineFollower {
 		ValueChecker valueChecker = new ValueChecker(config);
 		
 		while(true) {
+			//Start configurator UI
 			if (!configUI.start()) break;
 			LCD.clear();
 			
+			//Check if configuration values are valid
 			if (valueChecker.check()) {
+				//OK -> Start PID controller
 				pid.start();
 			}
 		}

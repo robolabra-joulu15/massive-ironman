@@ -4,7 +4,8 @@ import lejos.nxt.MotorPort;
 
 /*
   
- This class is used to capsulate config values so they're easy to use and edit everywhere using these methods.
+  This class is used to encapsulate configuration values so they're easy to use and edit everywhere using these methods.
+  Contains mainly getters and setters.
   
  */
 
@@ -103,6 +104,9 @@ public class Configuration {
 	    return movementSpeed;
     }
 	
+	//These two functions below are useful in MotorSelector UI-component. 
+	
+	//Convert char value to MotorPort
 	public MotorPort charToMotorPort(char c) {
 		if (c == 'A') {
 			return MotorPort.A;
@@ -115,6 +119,7 @@ public class Configuration {
 		}
 	}
 	
+	//Conver MotorPort to char value
 	public char motorPortToChar(MotorPort port) {
 		if (port.equals(MotorPort.A)) {
 			return 'A';
