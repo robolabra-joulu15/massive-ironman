@@ -81,8 +81,8 @@ public class PIDConfiguratorUI {
         LCD.drawString("START! ", 1, 5);
 
         //Display values
-        LCD.drawString("" + this.config.getPID_kp(), 5, 1);
-        LCD.drawString("" + this.config.getPID_ki(), 5, 2);
-        LCD.drawString("" + this.config.getPID_kd(), 5, 3);
+        LCD.drawString("" + this.config.getPid_kp(), 5, 1);
+        LCD.drawString("" + this.config.getPid_ki(), 5, 2);
+        LCD.drawString("" + this.config.getPid_kd(), 5, 3);
     }
 }
