@@ -35,16 +35,16 @@ public class PIDConfiguratorUI {
 
                 if (selection == 1) {
                     //Select p constant
-                    NumberSelector kpSelect = new NumberSelector(10, this.config.getPID_kp(), 5);
-                    this.config.setPID_kp(kpSelect.select());
+                    NumberSelector kpSelect = new NumberSelector(10, this.config.getPid_kp(), 5);
+                    this.config.setPid_kp(kpSelect.select());
                 }else if (selection == 2) {
                     //Select i constant
-                    NumberSelector kiSelect = new NumberSelector(10, this.config.getPID_ki(), 5);
-                    this.config.setPID_ki(kiSelect.select());
+                    NumberSelector kiSelect = new NumberSelector(10, this.config.getPid_ki(), 5);
+                    this.config.setPid_ki(kiSelect.select());
                 }else if (selection == 3) {
                     //Select d constant
-                    NumberSelector kdSelect = new NumberSelector(10, this.config.getPID_kd(), 5);
-                    this.config.setPID_kd(kdSelect.select());
+                    NumberSelector kdSelect = new NumberSelector(10, this.config.getPid_kd(), 5);
+                    this.config.setPid_kd(kdSelect.select());
                 }else if (selection == 4) {
                     //Back!
                     return false;
