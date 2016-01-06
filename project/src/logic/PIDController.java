@@ -74,6 +74,7 @@ public class PIDController {
 				rightMotor.backward();
 			}
 			
+			//update lastError
 			lastError = error;
 		}
 		

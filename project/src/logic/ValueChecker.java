@@ -3,6 +3,8 @@ package logic;
 import ui.Error;
 import util.Configuration;
 
+//This class is used to check if configuration values are valid.
+
 public class ValueChecker {
 
 	private Configuration config;
@@ -23,8 +25,7 @@ public class ValueChecker {
 			error.display();
 			return false;
 		}
-		
-		
+			
 		return true;
 	}
 	
