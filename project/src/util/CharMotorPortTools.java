@@ -24,7 +24,7 @@ public class CharMotorPortTools {
         }
     }
 
-    //Conver MotorPort to char value
+    //Convert MotorPort to char value
     public static char motorPortToChar(MotorPort port) {
         if (port.equals(MotorPort.A)) {
             return 'A';

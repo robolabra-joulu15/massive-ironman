@@ -101,11 +101,11 @@ public class Configuration {
     }
 
     public char getLeftMotorPortChar() {
-        return motorPortToChar(this.leftMotorPort);
+        return CharMotorPortTools.motorPortToChar(this.leftMotorPort);
     }
 
     public char getRightMotorPortChar() {
-        return motorPortToChar(this.rightMotorPort);
+        return CharMotorPortTools.motorPortToChar(this.rightMotorPort);
     }
 
     public int getLineColor() {
