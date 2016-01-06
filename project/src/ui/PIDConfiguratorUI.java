@@ -4,6 +4,12 @@ import lejos.nxt.Button;
 import lejos.nxt.LCD;
 import util.Configuration;
 
+/*
+
+  Configuration menu class for PID controller values
+
+*/
+
 public class PIDConfiguratorUI {
 
     private Configuration config;

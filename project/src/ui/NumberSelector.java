@@ -4,6 +4,13 @@ import lejos.nxt.Button;
 import lejos.nxt.LCD;
 import util.NumberArrayTools;
 
+/*
+
+  This class is a UI component used to change integer and double values in
+  configuration menus.
+
+*/
+
 public class NumberSelector {
 
     private int[] numbers;
@@ -13,6 +20,7 @@ public class NumberSelector {
     private int pointerLocation;
     private int decimals;
 
+    //for integer values, you don't have to specify the decimal parameter as it defaults to 0
     public NumberSelector(int numbers, double value) {
         this(numbers, value, 0);
     }

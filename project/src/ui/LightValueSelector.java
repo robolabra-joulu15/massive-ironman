@@ -5,6 +5,13 @@ import lejos.nxt.LCD;
 import lejos.nxt.LightSensor;
 import lejos.nxt.SensorPort;
 
+/*
+
+  This is a UI component used to select light values using the NXT light
+  sensor. 
+
+*/
+
 public class LightValueSelector {
 
     private LightSensor light;

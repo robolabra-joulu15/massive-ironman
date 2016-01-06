@@ -1,5 +1,12 @@
 package util;
 
+/*
+
+  This class includes two utility methods to convert a number to an array, 
+  for example 1200 -> {1, 2, 0, 0} and the other way around
+
+*/
+
 public class NumberArrayTools {
 
     //Utility function used to convert number value to an array containing single numbers
@@ -13,7 +20,7 @@ public class NumberArrayTools {
         for (int i = 0; i < numbers; i++) {
             array[i] = (int)Math.floor((value / divider));
             value -= array[i] * divider; //decrease original number
-            divider = divider / 10; //reduce divider
+            divider = divider / 10; //reduce divider 
         }
 
         return array;

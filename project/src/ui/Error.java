@@ -6,6 +6,13 @@ import lejos.nxt.Button;
 import lejos.nxt.LCD;
 import util.StringTools;
 
+/*
+
+  This class is a UI component used to display an error message. It automatically 
+  splits the given error string into rows to fit the NXT brick LCD screen. 
+
+*/
+
 public class Error {
 
     private ArrayList<String> rows;

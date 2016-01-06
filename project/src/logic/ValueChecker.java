@@ -3,7 +3,11 @@ package logic;
 import ui.Error;
 import util.Configuration;
 
-//This class is used to check if configuration values are valid.
+/*
+
+  This class is used to check if user given configuration values are valid.
+
+*/
 
 public class ValueChecker {
 

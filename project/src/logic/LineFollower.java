@@ -7,6 +7,13 @@ import lejos.nxt.Sound;
 import ui.ConfiguratorUI;
 import util.Configuration;
 
+/*
+
+  This class initializes all generally needed objects for the line follower,
+  and is the core of the program.
+
+*/
+
 public class LineFollower {
 
     public void start() {

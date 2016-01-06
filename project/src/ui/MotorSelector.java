@@ -3,6 +3,13 @@ package ui;
 import lejos.nxt.Button;
 import lejos.nxt.LCD;
 
+/*
+
+  This is a UI component used to select between motors A, B and C. Used in
+  general configuration UI to select left and right motors.
+
+*/
+
 public class MotorSelector {
 
     private Pointer pointer;

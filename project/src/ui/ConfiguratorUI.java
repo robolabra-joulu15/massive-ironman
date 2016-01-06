@@ -4,6 +4,12 @@ import lejos.nxt.Button;
 import lejos.nxt.LCD;
 import util.Configuration;
 
+/*
+
+  Configuration menu class for general values
+
+*/
+
 public class ConfiguratorUI {
 
     private Configuration config;

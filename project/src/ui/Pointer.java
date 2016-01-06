@@ -2,6 +2,17 @@ package ui;
 
 import lejos.nxt.LCD;
 
+/*
+
+  This class is a UI component to manage a single char pointer used to point
+  which value is currently selected in menus and different kind of selectors.
+  
+  The pointer remembers it's position and when it's value changes (X/Y), it 
+  automatically removes the old char from LCD and renders a new one in 
+  the new position.
+
+*/
+
 public class Pointer {
 
     private int xPos;

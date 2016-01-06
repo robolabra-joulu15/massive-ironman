@@ -2,10 +2,17 @@ package util;
 
 import java.util.ArrayList;
 
+/*
+
+  This class includes a multiRow utility method, which is used to split a single
+  string into a list containing multiple strings so it's easy to split a long
+  string into rows. This is needed, because the NXT LCD screen can only display
+  16 characters per row.
+
+*/
+
 public class StringTools {
 
-    //Utility function used to convert a long string to a multi row string so the text can be easily
-    //printed to the NXT LCD screen, which has only 16 characters width.
     public static ArrayList<String> multiRow(String str, int maxRowLength) {
         ArrayList<String> rows = new ArrayList<String>();
         String current = "";

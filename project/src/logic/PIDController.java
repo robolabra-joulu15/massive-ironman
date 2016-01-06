@@ -5,6 +5,12 @@ import lejos.nxt.LightSensor;
 import lejos.nxt.NXTMotor;
 import util.Configuration;
 
+/*
+
+  This class implements the PID Controller line following logic.
+
+*/
+
 public class PIDController {
 
     private Configuration config;
