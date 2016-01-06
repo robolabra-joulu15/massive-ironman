@@ -27,11 +27,11 @@ public class PIDController {
         //target power level (the speed of both motors when going straight forward)
         int targetPower = this.config.getMovementSpeed();
         //Proportional constant
-        double kp = this.config.getPID_kp();
+        double kp = this.config.getPid_kp();
         //Integral constant
-        double ki = this.config.getPID_ki();
+        double ki = this.config.getPid_ki();
         //Derivative constant
-        double kd = this.config.getPID_kd();
+        double kd = this.config.getPid_kd();
 
         //motors
         NXTMotor leftMotor = new NXTMotor(this.config.getLeftMotorPort());
