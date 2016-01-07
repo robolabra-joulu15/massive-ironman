@@ -5,7 +5,7 @@ import lejos.robotics.navigation.DifferentialPilot;
 public class Laby
 {
 
-	DifferentialPilot pilot = new DifferentialPilot(5.6f, 10.7f, Motor.A, Motor.C);
+	DifferentialPilot pilot = new DifferentialPilot(5.6f, 10.5f, Motor.A, Motor.C);
 	TouchSensor touch = new TouchSensor(SensorPort.S1);
 	UltrasonicSensor ultra = new UltrasonicSensor(SensorPort.S2);
 	ArrayList<Integer> path = new ArrayList<Integer>();
@@ -17,7 +17,7 @@ public class Laby
 	void mainloop() throws Exception
 	{
 
-		path.add(3); //So the robot knows to go backwards if the original square is a dead end
+		path.add(0); //So the robot knows to go backwards if the original square is a dead end
 		pilot.setTravelSpeed(20);
 		pilot.setRotateSpeed(30);
 		
@@ -95,6 +95,12 @@ public class Laby
 						path.add(2);
 						backTracking = false;
 					}
+				}
+				
+				if(path.get(path.size()-1) == 0)
+				{
+					pilot.rotate(180);
+					backTracking = false;
 				}
 				
 			}
