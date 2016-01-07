@@ -1,4 +1,3 @@
-//package Robotti;
 import lejos.nxt.*;
 import lejos.util.Delay;
 import lejos.nxt.SensorPort;
@@ -15,12 +14,11 @@ public class JerenRobo {
 			}
 		});
 
-		
 		System.out.println("oletko valmis?");
 		System.out.println("paina -->");
 		Button.RIGHT.waitForPressAndRelease();
 		LCD.clear();
-		
+
 		LightSensor sensor = new LightSensor(SensorPort.S1);
 
 		int vari;
@@ -30,41 +28,41 @@ public class JerenRobo {
 
 		while (true) {
 			Motor.A.rotate(-45);
-			vari = sensor.getNormalizedLightValue();
-			lippu(vari);
+			vari = sensor.getNormalizedLightValue(); // valosensori mittaa
+														// pallon värin
+			naytaVari(vari);
 			Motor.A.rotate(-45);
-			Delay.msDelay(1000);
+			Delay.msDelay(1000); // ohjelma odottaa sekunnin
 		}
-
 	}
 
-	public static void lippu(int vari) {
+	public static void naytaVari(int vari) {
 		if (vari <= 330) {
 			tumma();
 		}
-		
+
 		if (vari > 460) {
 			vaalea();
 		}
-		
-		else {
+
+		if (vari > 330 && vari <= 460) {
 			eiPalloa();
 		}
 	}
-	
-	public static void vaalea(){
+
+	public static void vaalea() {
 		Motor.B.rotateTo(-90);
 		Delay.msDelay(2000);
 		alkuun();
 	}
-	
-	public static void tumma(){
+
+	public static void tumma() {
 		Motor.B.rotateTo(90);
 		Delay.msDelay(2000);
 		alkuun();
 	}
-	
-	public static void eiPalloa(){
+
+	public static void eiPalloa() {
 		LCD.drawString("Ei palloa", 1, 1);
 		LCD.drawString("paina enter", 1, 2);
 		Motor.B.rotateTo(180);
@@ -72,9 +70,8 @@ public class JerenRobo {
 		LCD.clear();
 		alkuun();
 	}
-	
+
 	public static void alkuun() {
 		Motor.B.rotateTo(0);
 	}
-	
 }
