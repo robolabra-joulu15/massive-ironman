@@ -1,6 +1,6 @@
-<project name="HelloWorld" default="uploadandrun">
+<project name="Laby" default="uploadandrun">
   <description>
-    HelloWorld build file
+    Laby build file
   </description>
 	
   <target name="clean" description="clean up all generated files" >

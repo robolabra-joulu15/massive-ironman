@@ -5,20 +5,34 @@ import lejos.robotics.navigation.DifferentialPilot;
 public class Laby
 {
 
-	DifferentialPilot pilot = new DifferentialPilot(4.6, 12.1, Motor.A, Motor.C);
+	DifferentialPilot pilot = new DifferentialPilot(5.6f, 10.7f, Motor.A, Motor.C);
 	TouchSensor touch = new TouchSensor(SensorPort.S1);
 	UltrasonicSensor ultra = new UltrasonicSensor(SensorPort.S2);
 	ArrayList<Integer> path = new ArrayList<Integer>();
 	boolean backTracking = false;
-	int dist = 25;
+	int dist = 30;
 	
-	void mainloop()
+	
+	//Todo: Make this actually readable
+	void mainloop() throws Exception
 	{
+
+		path.add(3); //So the robot knows to go backwards if the original square is a dead end
+		pilot.setTravelSpeed(20);
+		pilot.setRotateSpeed(30);
+		
+		boolean start = true; 
 		while(!touch.isPressed())
 		{
-			while(backTracking = false)
+			while(backTracking = false && !touch.isPressed());
 			{
-				pilot.travel(dist);
+				if(!start)
+				{
+					pilot.travel(dist);
+				}
+
+				start = false;
+				
 				if(!checkLeft())
 				{
 					if(!checkRight())
@@ -28,69 +42,84 @@ public class Laby
 							//We are in a dead end so it's time to go back
 							backTracking = true;
 							pilot.rotate(-90);
-							
 						}else{path.add(3);}
 					}else{path.add(2);}
 				}else{path.add(1);}	
 			}
 			
-			while(backTracking)
+			while(backTracking && !touch.isPressed())
 			{
 				pilot.travel(-dist);
-				
-				if(path.get(path.size()-1) == 1)
+
+				if(path.get(path.size()-1) == 3)
 				{
-					if(!checkRight())
-					{
-						path.remove(path.size()-1);
-						pilot.travel(-dist);
-					}else
-					{
-						if(!checkRight())
-						{
-							path.remove(path.size()-1);
-							pilot.travel(-dist);
-						}else
-						{
-							backTracking = false;
-						}
-					}
+					rmLast();
+					pilot.rotate(-90);
+					pilot.travel(-dist);
 				}
+				
 				if(path.get(path.size()-1) == 2)
 				{
 					if(!checkRight())
 					{
 						pilot.rotate(-90);
 						pilot.travel(-dist);
+						rmLast();
 					}
 					else
 					{
+						rmLast();
+						path.add(3);
 						backTracking = false;
 					}
 				}
-				if(path.get(path.size()-1) == 3)
+				
+				
+				if(path.get(path.size()-1) == 1)
 				{
-					pilot.rotate(-90);
-					pilot.travel(-dist);
+					if(!checkRight())
+					{
+						if(!checkRight())
+						{
+							rmLast();
+							pilot.rotate(-90);
+						}else
+						{
+							rmLast();
+							path.add(3);
+							backTracking = false;
+						}
+					}else
+					{
+						rmLast();
+						path.add(2);
+						backTracking = false;
+					}
 				}
+				
 			}
 		}
 	}
 
+	public void rmLast() //Got lazy writing this a gazillion times
+	{
+		path.remove(path.size()-1);
+	}
+	
 	public boolean checkRight()
 	{
 		pilot.rotate(90);
 		
-		if(ultra.getRange() < 18)
+		if(ultra.getRange() < 20)
 			return false;
 		
 		return true;
 	}
-
+	
 	public boolean checkLeft()
 	{
 		pilot.rotate(-90);
-		if(ultra.getRange() < 18)
+		if(ultra.getRange() < 20)
 			return false;
 		
 		return true;
