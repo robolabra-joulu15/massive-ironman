@@ -1,0 +1,33 @@
+import lejos.nxt.*;
+import lejos.nxt.ColorSensor.Color;
+import lejos.util.Delay;
+
+
+public class HelloWorld {
+  public static void main (String[] args) {
+	  ColorSensor sensor = new ColorSensor(SensorPort 1);
+	  Color vari;
+	  while(true){
+    Motor.A.rotate(45);
+    vari = sensor.getColor();
+    if(vari == white){
+    	Motor.B.rotate(90);
+    	Delay.msDelay(2000);
+    	Motor.B.rotate(-90);
+    }
+    else if(vari == black){
+    	Motor.B.rotate(-90);
+    	Delay.msDelay(2000);
+    	Motor.B.rotate(90);
+    }else{
+    	Motor.B.rotate(180);
+    	Button.waitForPress();
+    	Motor.B.rotate(-180);
+    }
+    Motor.A.rotate(90);
+    	
+    }
+    
+	  }
+  }
+}
