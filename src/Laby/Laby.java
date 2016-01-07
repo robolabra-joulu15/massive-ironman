@@ -1,6 +1,5 @@
 import java.util.ArrayList;
 
-
 import lejos.nxt.*;
 import lejos.robotics.navigation.DifferentialPilot;
 public class Laby
