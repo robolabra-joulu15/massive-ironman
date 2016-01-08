@@ -2,21 +2,23 @@ package org.lejos.example;
 
 import lejos.nxt.*;
 
-/**
- * Example leJOS Project with an ant build file
- *
- */
-public class HelloWorld {
 
-	public static void main(String[] args) {
-		Motor.A.setSpeed(80); //max 900?
-		Motor.A.rotate(45);
-		Motor.A.rotate(-45);
-		Motor.A.rotate(45);
-		Motor.A.rotate(-45);
-		Motor.A.rotate(45);
-		Motor.A.rotate(-44);
-		Button.waitForPress();
-//		Motor.A.rotate(360);
+public class Maalivahti {
+	private NXTRegulatedMotor maalivahti;
+	
+	public Maalivahti () {
+		this.maalivahti = new NXTRegulatedMotor(MotorPort.A);
+	}
+	
+	public void start() {
+		while(!Button.ENTER.isPressed()) {
+			maalivahti.setSpeed(35);
+			maalivahti.rotate(360);
+			try {
+				Thread.sleep(6000);
+			} catch (InterruptedException e) {
+				
+			}
+		}
 	}
 }

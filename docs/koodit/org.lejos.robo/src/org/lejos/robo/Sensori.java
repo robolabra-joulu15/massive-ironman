@@ -2,21 +2,26 @@ package org.lejos.example;
 
 import lejos.nxt.*;
 
-/**
- * Example leJOS Project with an ant build file
- *
- */
-public class HelloWorld {
 
-	public static void main(String[] args) {
-		Motor.A.setSpeed(80); //max 900?
-		Motor.A.rotate(45);
-		Motor.A.rotate(-45);
-		Motor.A.rotate(45);
-		Motor.A.rotate(-45);
-		Motor.A.rotate(45);
-		Motor.A.rotate(-44);
-		Button.waitForPress();
-//		Motor.A.rotate(360);
+public class Sensori {
+	private UltrasonicSensor sensori;
+	private Pallonlaukaisija pallonlaukaisija;
+	
+	public Sensori(Pallonlaukaisija pallonlaukaisija) {
+		this.sensori = new UltasonicSensor(SensorPort.S4);
+		this.pallonlaukaisija = pallonlaukaisija;
 	}
+	
+	public void start() {
+		while(!Button.ENTER.isPressed()) {
+			distance = this.sensori.getDistance();
+			if(distance < 20) {
+				this.pallonlaukaisija.shoot();
+			}
+			try {
+				Thread.sleep()
+			}
+		}
+	}
+
 }
