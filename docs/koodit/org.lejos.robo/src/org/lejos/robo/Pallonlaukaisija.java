@@ -4,13 +4,14 @@ import lejos.nxt.*;
 
 
 public class Pallonlaukaisija {
-	private NXTMotor laukaisija;
+	private NXTRegulatedMotor laukaisija;
 	
 	public Pallonlaukaisija() {
-		this.laukaisija = new NXTMotor(MotorPort.B);
+		this.laukaisija = new NXTRegulatedMotor(MotorPort.B);
 	}
-	
-	public void start() {
-		
+
+	public void laukaise() {
+		this.laukaisija.setSpeed(900);
+		this.laukaisija.rotate(360);
 	}
 }

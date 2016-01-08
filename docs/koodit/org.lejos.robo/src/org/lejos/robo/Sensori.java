@@ -2,26 +2,35 @@ package org.lejos.example;
 
 import lejos.nxt.*;
 
-
 public class Sensori {
 	private UltrasonicSensor sensori;
-	private Pallonlaukaisija pallonlaukaisija;
+	private int etaisyys;
 	
-	public Sensori(Pallonlaukaisija pallonlaukaisija) {
+	public Sensori(int etaisyys) {
 		this.sensori = new UltasonicSensor(SensorPort.S4);
-		this.pallonlaukaisija = pallonlaukaisija;
+		this.etaisyys = etaisyys;
 	}
 	
-	public void start() {
-		while(!Button.ENTER.isPressed()) {
-			distance = this.sensori.getDistance();
-			if(distance < 20) {
-				this.pallonlaukaisija.shoot();
-			}
+	public boolean laukaistaanko() {
+		int[] etaisyydet = new int[10];
+		int lkm = 0;
+		for(int i = 0; i < 10; i++) {
+			int arvo = this.sensori.getDistance();
+			etaisyydet[i] = arvo;
 			try {
-				Thread.sleep()
+				Thread.sleep(100);
+			} catch (InterruptedException e) {
+			}
+			if(arvo < this.etaisyys) {
+				lkm++;
 			}
 		}
+		if(lkm > 7) {
+			return true;
+		} else {
+			return false;
+		}
+		
 	}
 
 }

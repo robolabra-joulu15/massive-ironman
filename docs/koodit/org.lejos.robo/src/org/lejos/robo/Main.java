@@ -9,10 +9,9 @@ public class Main {
 		Maalivahti maalivahti = new Maalivahti();
 		Pallonlaukaisija pallonlaukaisija = new Pallonlaukaisija();
 		Sensori sensori = new Sensori(pallonlaukaisija);
-		Siirtaja siirtaja = new Siirtaja();
+		Siirtaja siirtaja = new Siirtaja(sensori);
 		maalivahti.start();
-		sensori.start();
 		siirtaja.start();
-		pallonlaukaisija.start();
+		Button.waitForPress();
 	}
 }

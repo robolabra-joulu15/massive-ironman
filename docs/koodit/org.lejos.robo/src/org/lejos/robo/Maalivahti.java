@@ -17,7 +17,6 @@ public class Maalivahti {
 			try {
 				Thread.sleep(6000);
 			} catch (InterruptedException e) {
-				
 			}
 		}
 	}
