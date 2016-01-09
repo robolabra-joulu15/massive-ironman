@@ -22,12 +22,15 @@ public class Laby
 		
 		while(!touch.isPressed())
 		{
-			//forward and backTrack both return a char (either f or b) which indicate which one we should call next
+			//forward and backTrack both return a char (either f, b or n)
 			if(dir == 'f')
 				dir = logic.forward();
 			
 			if(dir == 'b')
 				dir = logic.backTrack();
+			
+			if(dir == 'n') //if we get an 'n' it means there is no path out from this labyrinth 
+				break;	 	//so we just break out of the loop
 		}	
 	}
 	
