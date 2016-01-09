@@ -29,8 +29,8 @@ public class Laby
 			if(dir == 'b')
 				dir = logic.backTrack();
 			
-			if(dir == 'n') //if we get an 'n' it means there is no path out from this labyrinth 
-				break;	 	//so we just break out of the loop
+			if(dir == 'n') //if we get an 'n' it means there is no path out from this labyrinth
+				break;	//so we just break out of the loop
 		}	
 	}
 	
