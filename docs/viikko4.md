@@ -10,6 +10,8 @@ Projektin testaus: https://docs.google.com/presentation/d/1D3KAoP3e-Yq4Gff9whApL
 
 Robottiohjelman koodi löytyy palautettuna GitHubista kansiosta -testi-.
 
+Päädyin tekemään luokat moottorien liikuttamiseen, äänen soittamiseen ja mielialojen piirtämiseen. Ne tuntuivat luonnollisilta ja selkeyttivät koodin toimintaa huomattavasti. Tein myös abstraktin luokan Mieliala, jota käytin pohjana luokissa Iloinen ja Vihainen. Halutessa uusien mielialojen lisääminen olisi melko yksinkertaista. Kaikilla luokilla on vain yksi selkeä tehtävä. Myös mainista tuli siisti. Kommentit ovat mielestäni hyvät ja avuksi. Koodi on jäsenneltyä.
+
 Pähkäilin robotin luoksetulon kanssa aika kauan. Koodini toimi niin, että robotin kuullessa kovan äänen se pysähtyi kuuntelemaan ja vertasi sensoreiden arvoja (readValue()). Sitten se kääntyi hieman sen sensorin suuntaisesti, missä arvo oli suurempi. Robotti kääntyili kuitenkin vähän miten sattui. En löytänyt koodistani virhettä, joten aloin tutkailla äänisensorien toimintaa tarkemmin. Teippasin sensorit vaakatasoon, sensoripäät poispäin robotista. Sitten testailin eri suunnista kailottamalla. Huomasin, että robotti kääntyi parhaiten jos ääntä päästi vähän sen korvan yläpuolella. Olin hieman ymmälläni, sillä YouTuben videoissa robotit kääntyvät kaukaakin huutamalla. Parhaimmillaankin siis oma koodini sai robotin pysähtymään ja kääntymään äänen suuntaan. En saanut robottia tulemaan luokse kuten olisin halunnut.
 
 Kaikenkaikkiaan projekti oli kuitenkin mielestäni oikein onnistunut. Alussa oli kankeutta ja vähän kyllä hirvitti, että mihinkäs tässä on ryhtynyt :D En olisi ikinä uskonu, että voisi itse saada jotain tällaista aikaan. Minut yllätti se, kuinka hauskaa ja innostavaa työn tekeminen oli. Ja se kuinka helppoa ohjelmointi oli valmiiden luokkien ansiosta. Opin paljon uusia asioita, mutta eniten kehityin kyllä tiedonhaussa. Hale to the internet!
@@ -17,4 +19,4 @@ Kaikenkaikkiaan projekti oli kuitenkin mielestäni oikein onnistunut. Alussa oli
 Ei pidä unohtaa myöskään, että opin käyttämään GitHubbia!
 
 Vaikeinta oli graafisen esityksen luominen sekä omien äänien saaminen toimimaan. 
-Helpointa oli varmaan robotin rakennus (jei!) ja sensorien toiminta sekä moottorit.
+Helpointa oli varmaan robotin rakennus (ja hauskinta, jei!) ja sensorien toiminta sekä moottorit.
