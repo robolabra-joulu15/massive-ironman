@@ -66,6 +66,8 @@ Ohjelman suoritus lähtee liikkeelle luokasta `Main.java`, joka luo uuden luokan
 
 `ConfiguratorUI.java`-luokka käyttää avukseen **components**-paketin luokkia valikon toteutuksessa. `ConfiguratorUI.java`-luokan yksi valinta luo uuden `PIDConfiguratorUI.java`-luokan olion ja kutsuu sen `start()`-metodia, jolloin aukeaa PID-asetusvalikko. Kyseinen `start()`-metodi palauttaa `false` jos käyttäjä valitsee "BACK"-vaihtoehdon tai painaa escape-näppäintä. `True` palautetaan, jos käyttäjä valitsee "START!", jolloin myös `ConfiguratorUI.java`-luokan olio josta kutsuttiin PID-asetusvalikkoa palauttaa `true`, jolloin palataan `LineFollower.java`:an.
 
+`ConfiguratorUI.java` ja `PIDConfiguratorUI.java` muistuttavat toiminnallisuudeltaan toisiaan hyvin paljon, ja niille olisi voinut toteuttaa jonkinlaisen interfacen/yläluokan. Päädyin kuitenkin pitämään ne erillään ajanpuutteen vuoksi, ja interfacen merkitys ei kuitenkaan olisi tässä tapauksessa ollut kovin suuri, koska se ei oikeastaan olisi luonut koodiin yhtään enempää joustavuutta. Jonkun geneerisemmän menusysteemin olisin todennäköisesti toteuttanut, jos aikaa olisi ollut tarpeeksi.
+
 `PIDController.java`-luokka toteuttaa liikkumisen toimittamalla PID-kontrolleriin liittyviä laskutoimituksia metodissa `start()`, ja laskutoimitusten avulla saa tietoonsa sekä vasemman että oikean moottorin halutut nopeudet, jotka se asettaa `NXTMotor`-luokan metodin `setPower()` avulla. Käytin [tätä](http://www.inpharmix.com/jps/PID_Controller_For_Lego_Mindstorms_Robots.html) opasta hyödykseni PID-kontrolleria toteuttaessani.
 
 ## Testaus
@@ -104,6 +106,10 @@ _Variaatio 3:_
 Testasin nopeudella 60, mutta en löytänyt mitään PID-kontrollerin arvoja, joilla robotti ei olisi suistunut radalta ennemmin tai myöhemmin.
 
 **Testi 3:**
+![](https://raw.githubusercontent.com/TheDuckFIN/massive-ironman/master/pictures/hitto.jpg)
+Tässä testissä oli tarkoitus testata muita kuin 90-asteen risteyksiä, mutta teippi loppui kesken :( Olen kerran aikaisemmin testannut tälläisellä, mutta siinä oli jyrkemmät mutkat. Tällöin robotti suistui radalta. Ennustukseni on, että jos risteyksen mutka on tarpeeksi loiva, robotti saattaa risteyksessä lähteä väärään suuntaan. Mutta testin toteuttaminen epäonnistui valitettavasti.
+
+**Testi 4:**
 ![](https://raw.githubusercontent.com/TheDuckFIN/massive-ironman/master/pictures/jyrkat.jpg)
 Tässä testissä testasin jyrkkiä mutkia.
 
@@ -117,7 +123,59 @@ _Variaatio 2:_ Nopeus: 40, KP: 3.8, KI: 0.0008, KD: 5.0
 
 Samat tulokset kuin variaatiossa 1.
 
-Vaikuttaisi siis siltä, että robotti on virhealtis liian tiukissa mutkissa. Minulta tosin loppui lattiatila, ja valaistus testinurkassa oli todella huono, joten paremmissa olosuhteissa uskoisin robottini selviävän mutkasta 3. Mutka 2 kuitenkin on uskoakseni robotilleni liikaa. Lisäksi asetuksia säätämällä robotin saa todennäköisesti soveltumaan tiukkoihinkin mutkiin, mutta silloin myös ääritapauksissa sulavuus kärsii (esim. robotti ei osaisi mennä enää suoraan vaan vaappuisi edes takas).
+Vaikuttaisi siis siltä, että robotti on virhealtis liian tiukissa mutkissa. Minulta tosin loppui lattiatila, ja valaistus testinurkassa oli todella huono, joten paremmissa olosuhteissa uskoisin robottini selviävän mutkasta 3. Mutka 2 kuitenkin on uskoakseni robotilleni liikaa. Lisäksi asetuksia säätämällä robotin saa todennäköisesti soveltumaan tiukkoihinkin mutkiin, mutta silloin myös ääritapauksissa sulavuus kärsii (esim. robotti ei osaisi mennä enää suoraan vaan vaappuisi edes takas). 
 
 # Puutteet ja mahdolliset parannukset
 
+Jos olisi ollut aikaa, olisin voinut hioa PID-kontrolleria hieman enemmän. Nyt se on hieman virhealtis tiukoissa mutkissa. Lisäksi olisi voinut parantaa viivanseuraajalogiikan kykyä selvitä risteyksistä, sillä jos risteys ei olisi 90-asteinen, voi robotti mahdollisesti eksyä radalta (testi 3). 
+
+Asetusvalikoiden toteutukseen olisi voinut myös tehdä geneerisemmän systeemin erillisten luokkien sijaan, kuten ylempänä koodin rakenne -osiossa mainitsin, mutta aika ei riittänyt tämän toteutukseen.
+
+Robotti olisi mahdollisesti voinut kerätä jotain dataa viivaa seuratessaan, ja tulostaa sitä näytölle tai logiin. Lisäksi eri konfiguraatiokombinaatiot olisi voinut tallentaa pysyviksi "profiileiksi". Ajanpuutteen vuoksi nämä, ja moni muu suunnitelmassa mainituista ominaisuuksista jäi toteuttamatta, mutta robotin perustoiminnallisuuteen olen kyllä tyytyväinen, ja sain sen sellaiseen kuntoon kuin halusin.
+
+# Käyttöohje
+
+Kasaa robotti ohjeiden mukaan ja tee sille rata. Tämän jälkeen voit siirtää koodin robottiin seuraavasti:
+
+1. Pystytä rojbOS [tämän](https://github.com/robolabra-joulu15/massive-ironman/wiki/1.-environment) ohjeen perusteella. Alla olevat kohdat neuvovat miten tässä ympäristössä siirrät koodin robottiin. Muissa kehitysympäristöissä saattavat kohdat hieman vaihdella.
+2. Kloonaa tämä repositorio ja avaa projekti eclipsessä.
+3. Kytke robotti USB-kaapelilla kiinni koneeseen
+4. Paina oikealla hiiren napilla build.xml-tiedostoa ja valitse Run as -> Ant build
+5. Ohjelma avautuu robotissa
+6. Irroita USB-kaapeli
+
+Nyt olet valmis käyttämään robottia! Säädä eka asetukset! Edessäsi on seuraavanlainen näkymä: 
+
+![](https://raw.githubusercontent.com/TheDuckFIN/massive-ironman/master/pictures/main_new.jpg)
+
+Liiku valikossa nuolten avulla (vasen ylös, oikea alas), enter eli iso nappi keskellä valitsee ja escape eli pieni nappi alhaalla palaa takaisin eli tässä tapauksessa sammuttaa robotin.
+
+Valitsemalla kohdan "left motor" tai "right motor" pääset valitsemaan moottoriportit samoilla kontrolleilla kuin päävalikossa:
+
+![](https://raw.githubusercontent.com/TheDuckFIN/massive-ironman/master/pictures/motorselector.jpg)
+
+Valitsemalla päävalikosta kohdan "line color" tai "bg color" päädyt seuraavanlaiseen valitsimeen: 
+
+![](https://raw.githubusercontent.com/TheDuckFIN/massive-ironman/master/pictures/lightvalueselector.jpg)
+
+Aseta robotin valosensori joko viivan (line) tai taustan (bg) päälle ja paina enteriä, jolloin robotti tunnistaa valoarvon.
+
+Valitsemalla päävalikosta move speed -kohdan päädyt numerovalitsimeen:
+
+![](https://raw.githubusercontent.com/TheDuckFIN/massive-ironman/master/pictures/numberselector.jpg)
+
+Oikea/vasen nuoli liikkuu osoittamaansa suuntaan, enter kasvattaa arvoa (9 hyppää nollaan) ja escape-nappi palaa takaisin valikkoon.
+
+Valitsemalla PID CONFIGURATION -kohdan päädyt PID-asetusvalikkoon:
+
+![](https://raw.githubusercontent.com/TheDuckFIN/massive-ironman/master/pictures/pidconfig.jpg)
+
+Tästä valikosta voit säätää PID-kontrollerin vakioiden arvoja. Painamalla escape-nappia tai menemällä BACK-kohtaan ja painamalla enteriä pääset takaisin päävalikkoon. Jos muokkaat arvoa, päädyt seuraavan näköiseen valitsimeen: 
+
+![](https://raw.githubusercontent.com/TheDuckFIN/massive-ironman/master/pictures/numberselector_double.jpg)
+
+Täysin samanlainen kuin aikaisempi numerovalitsin, erona vain piste erottamassa kokonaisosan desimaaliosasta.
+
+Valitsemalla START! jommastakummasta valikosta robotti lähtee käyntiin. Robotin tulee olla viivan päällä jotta se osaa lähteä sitä seuraamaan. Jos asetuksissa meni jotain todella pieleen, robotti osaa ilmoittaa siitä:
+
+![](https://raw.githubusercontent.com/TheDuckFIN/massive-ironman/master/pictures/error.jpg)
