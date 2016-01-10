@@ -16,30 +16,37 @@ import util.Configuration;
 
 public class LineFollower {
 
-    public void start() {
+    private Configuration config;
+    private ConfiguratorUI configUI;
+    private LightSensor light;
+    private PIDController pid;
+    private ValueChecker valueChecker;
+    
+    public LineFollower() {
         //Initialize general objects
-        Configuration config = new Configuration();
-        ConfiguratorUI configUI = new ConfiguratorUI(config);
-        LightSensor light = new LightSensor(SensorPort.S1, false);
-        PIDController pid = new PIDController(config, light);
-        ValueChecker valueChecker = new ValueChecker(config);
+        this.config = new Configuration();
+        this.configUI = new ConfiguratorUI(this.config);
+        this.light = new LightSensor(SensorPort.S1, false);
+        this.pid = new PIDController(this.config, this.light);
+        this.valueChecker = new ValueChecker(this.config);
+    }
 
+    public void start() {
         while (true) {
             //Start configurator UI
-            if (!configUI.start()) {
+            if (!this.configUI.start()) {
                 break;
             }
             LCD.clear();
 
             //Check if configuration values are valid
-            if (valueChecker.check()) {
+            if (this.valueChecker.check()) {
                 //OK -> Start PID controller
-                pid.start();
+                this.pid.start();
             }
         }
 
         Sound.beep();
-
     }
 
 }
