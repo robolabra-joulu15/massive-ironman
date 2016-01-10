@@ -51,3 +51,6 @@ Koodin pakkausrakenne on seuraava:
     - `Configuration.java`
     - `NumberArrayTools.java`
     - `StringTools.java`
+
+Logic-pakkaus sisältää robotin toimintaan liittyvät luokat, kuten PID-kontrollerin, joka hoitaa viivan seuraamisen. Main-pakkaus sisältää vain yhden luokan, pääohjelman, jonka ainut toiminnallisuus on luoda uusi LineFollower-olio ja käynnistää se. Ui-pakkaus sisältää robotin LCD-näytön käyttöliittymään liittyvvät luokat. Ui-pakkaus sisältää alipakakkauksen components, joka sisältää yksinkertaiset "käyttöliittymäkomponentit". Näitä komponentteja hyödynnetään muun muassa itse ui-paketin asetusvalikkoluokissa `ConfiguratorUI.java` sekä `PIDConfiguratorUI.java`. `Error.java`-luokan kanssa olin kahden vaiheilla tulisiko se laskea komponentiksi vai kokonaiseksi valikoksi, mutta päädyin lopulta tulkitsemaan sen komponentiksi. Util-pakkaus sisältää muissa luokissa hyödynnettyjä aputyökaluja sekä konfiguraatioluokan.
+
