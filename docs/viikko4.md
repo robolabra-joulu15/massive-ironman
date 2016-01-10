@@ -1,0 +1,51 @@
+#Viikko 4 - loppuraportti
+
+Viimeinen versio robotista (eli Pro-BonoBot) pystyi lopulta selviytymään yksinkertaisesta labyrintista, joskin siihen jäi vielä useita testauksessa näkyviä ongelmia. Robotin suunnittelua, testaamista ja suoriutumista käsitellään seuraavana erikseen fyysisen rakenteen ja koodin osalta.
+
+
+##Robotin rakenne - varhaiset versiot
+Robotin rakenne muodostui pitkälti yrityksen ja erehdyksen kautta; alkuperäinen idea oli rakentaa yksinkertainen pyörillä kulkeva kehikko, josta muodostui vähitellen useiden iteraatioiden kuluessa lopullinen versio.
+
+Robotin yksi varhainen rakenne on dokumentoitu kuvassa BonoBot_1. Tässä toteutuksessa robotilla on 2 moottoroitua pyörää sekä takana sijaitseva kääntyvä apupyörä. Kuvassa BonoBot_2 runkoon on liitetty kaikuluotaimet eteen ja sivulle. Tämän version ideana oli yksinkertaisesti seurata vasenta seinää ulos (hyvin rajoitetusta) labyrintista. Tämä versio onnistuikin kertaalleen selvittämään käyttämäni testilabyrintin. Halusin loppujen lopuksi kuitenkin rakentaa hieman monimutkaisempaa suunnistusta käyttävän robotin, joten seuraavat iteraatiot eivät enää perustu suoranaiseen seinän seuraamiseen.
+
+Yksittäisestä onnistumisesta huolimatta tässä robotin rakenteessa on selkeitä ongelmia, kuten voi todeta videosta BonoBot_1. Selkein rakenteellinen ongelma on apupyörä, jonka kulloinenkin asento vaikuttaa voimakkaasti robotin liikkeen suuntaan; jos apupyörä esim. sattuu olemaan sivuttain, robotti kääntyy myös yrittäessään siirtyä suoraan eteen. Sopivassa asennossa se voi myös saada robotin jumiin labyrintin kulmaukseen. Myös moottoroitujen pyörien kanssa on ongelmia, sillä ilman erityistä tukirakennetta robotin paino ja moottoreiden vääntö kääntää niitä vinoon ajon aikana. Lisäksi robotti on varsin kiikkerä.
+
+Kuvan BonoBot_3 myöhemmässä versiossa kaikuluotaimet on käännetty eteen ja rakenteeseen on lisätty kompassi. Seinän seuraamisesta luopumisen jälkeen eteen käännettyjen kaikuluotainten tavoitteena on tunnistaa, onko robotin molempien pyörien edessä tyhjää tilaa eli avoin käytävä. Kompassi on sijoitettu erillisen antennin kärkeen siinä toivossa, että moottoreiden ja muiden sähköistettyjen osien magneettikenttien aiheuttamat virheet olisivat pienempiä. Muuten rakenne kärsii kaikista aiemman version ongelmista.
+
+
+##Robotin rakenne - Pro-BonoBot
+Muutamien enemmän tai vähemmän epäonnistuneiden rakennekokeilujen jälkeen robotin rakenne on vakiintunut lopulliseen muotoonsa. Viimeinen versio kokonaisuudessaan on dokumentoitu kuvissa ProBonoBot_1-4 (sekä 5-8 hieman riisutuissa muodoissa).
+
+Aiemmista ongelmista moottoroitujen pyörien vääntymien on estetty siirtämällä ne robotin alle ja antamalla niille erillinen tukirakenne. Taka-apupyörä on korvattu irrallisella pallolla, sillä en saanut käytettävissä olevilla osilla rakennettua kiinteää, hyvintoimivaa apupyörää. Pallorakenne toimii yleisesti ottaen varsin hyvin, joskin pallon on mahdollista livetä. Tämä on kuitenkin varsin harvinaista, sillä tämä sattui kerran useiden kymmenien testien aikana.
+
+Kaikuluotain on siirretty robotin alle, jotta se olisi kauempana robotin etukärjestä; kaikuluotain ei toimi ollessaan liian lähellä estettä. Uutena sensorina robottiin on lisätty kosketussensori, joka on kytketty etupuskuriin.
+
+Tämän rakenteen kohdalla jo mainittu mahdollisuus, että takarenkaan virkaa toimittava sirkuspallo irtoaa kesken matkan voitaneen katsoa jonkinasteiseksi ongelmaksi. Myös tämä versio olisi saattanut toimia paremmin kahdella kaikuluotaimella, mutta niiden mahduttaminen etäälle robotin keulasta ja riittävän alas olisi vastaavasti vaatinut uusia muutoksia muuhun rakenteeseen.
+
+Kenties suurin ongelma on riski juuttua seiniin, sillä robotin sensorit havaitsevat vain suoraan edessä olevia esineitä tai etupuskurin törmäyksen. Useimmiten jumittuminen on kuitenkin vain kiusallinen hidaste, josta päästään vähitellen irti. Yksi ratkaisu seiniin juuttumisen ehkäisemiseksi olisi voinut olla sijoittaa kaikuluotain erilliseen moottorilla käännettävään varteen, jolloin etäisyysmittausten tekeminen eri suuntiin olisi ollut luultavasti tarkempaa, eikä olisi edellyttänyt koko robotin liikuttelua. Tämä olisi kuitenkin vaatinut jälleen rakenteen suurempaa muuttamista.
+
+Robotin toiminnan kannalta suuremmat ongelmat eivät kuitenkaan liity sen rakenteeseen, vaan sensorien (kaikuluotaimet ja kompassi) toimintaan sekä koodiin, joka olettaa labyrintin olevan varsin yksinkertainen.
+
+
+##Koodin rakenne ja toiminta
+Robotin logiikka on varsin yksinkertainen. Jotta tämä toimisi, täytyy myös suunnistettavan labyrintin olettaa olevan yksinkertainen: labyrintin oletetaan koostuvan vain käytävistä ja kulmauksista, eli siinä ei voi olla silmukoita, risteyksiä tai muita monimutkaisuuksia. Sen sijaan käytävien rakenne voi muuten olla varsin vapaa, eli ohjelmointi ei edellytä 90:n asteen kulmia, tietyn mittaisia tai muotoisia käytäviä tai muitakaan vastaavia säännöllisyyksiä.
+
+Logiikan perustana on robotin tila tietyllä hetkellä (diskreetissä) ajassa, joka voi olla joko käytävä tai kulma. Käytävällä robotti mittaa kaikuluotaimella etäisyyden muutamaan hieman poikkeavaan suuntaan sen etupuolla. Jos suurin mitattu etäisyys on riittävän suuri, robotti ajaa löydettyyn suuntaan matkan, joka riippuu mitatusta etäisyydestä. Muuten robotti päättelee olevansa kulmassa ja siirtyy vastaavaan metodiin.
+
+Kulma-metodissa robotti kääntyy vuorotellen molemmille puolille ja mittaa kaikuluotaimella etäisyyden. Jotta robotti ei lähtisi vahingossa takaisin tulosuuntaansa, tässä käännökset on rajattu olemaan jonkin verran alle 180 astetta. Jos suurin löydetty etäisyys on riittävä, robotti kääntyy löydettyyn suuntaan ja liikkuu mitatusta etäisyydestä riippuvan matkan. Muuten robotti päättelee olevansa umpikujassa ja kääntyy 180 astetta. Molemmissa tapauksissa robotin tila muuttuu tämän jälkeen jälleen käytäväksi.
+
+Näiden perusmetodien lisäksi ohjelmointi hyödyntää muutamia apumetodeja, joita kutsutaan tarvittaessa tai tietyissä kohdissa koodia. Yksi metodi tarkistaa etupuskuriin kytketyn kosketussensorin tilan ja käskee robottia peruuttamaan pienen matkan, mikäli sensori havaitsee kosketuksen. Toinen apumetodi hoitaa varsinaisen liikkumisen eteenpäin. Metodi mittaa robotin suunnan ennen liikkumista ja liikkumisen jälkeen. Jos suunta on muuttunut liikaa liikkumisen aikana, robotti yrittää palauttaa alkuperäisen suunnan peruuttamalla hieman ja kääntymällä takaisin alkuperäiseen kompassisuuntaan. Näiden lisäksi ohjelmassa on omat simppelit metodit sensorien lukemiseen yms., jotka eivät vaadi sen suurempia selityksiä.
+
+Oheisilla videoilla voi nähdä esimerkit kaikkien metodien toiminnasta käytännössä. Nimen alku on ProBonoBot_ ja loppuosa kertoo vastaavat metodit, eli kaytava, kulma, suunnan_korjaus liikkumisen jälkeen suunnan oikaisevalle apumetodille ja lopulta puskuri etupuskurin toiminnalle.
+
+Koska kaikki metodit ovat loppujen lopuksi hyvin yksinkertaisia, niiden testauksessa on keskitytty lähinnä metodien toimintaan robotin kulloisenkin fyysisen rakenteen kanssa. Sen sijaan esim. yksikkötestausta ei ole tehty. Koodin ongelmat ovat lähes aina liittyneet nimenomaan siihen, että logiikka ei toimi robotin tai labyrintin rakenteen kanssa. Varsinainen testaus on tapahtunut siis labyrintissa, joko kokonaisuutena tai keskittyen tietyn metodin (lähinnä käytävän ja kulman) toimintaan. Näissä runsasta testaamista on tarvittu ennen kaikkea erilaisten, esim. liikkeiden pituutta säätävien vakioiden hakemiseen. Toinen testattava asia liittyy labyrintin rakenteeseen, eli käytävä- tai kulma-metodien ei pitäisi riippua kyseisen käytävän tai kulmauksen tarkasta rakenteesta.
+
+Koodissa näkyy muutamissa kohdin yhä alkuperäinen ajatus, jonka mukaan robotin piti pystyä suunnistamaan myös risteyksiä sisältävässä labyrintissa ja hyödyntää tarvittaessa myös edellisen ajanhetken tilaansa päätellessään tilanteeseen sopivaa toimintaa. Näiden toteutus olisi kuitenkin lopulta vaatinut huomattavasti enemmän aikaa.
+
+Yksi selkeä parannus ohjelmalogiikkaan olisi voinut olla threadien käyttö, jolloin kaikkia sensoreita olisi luettu tarpeen vaatiessa jatkuvasti. Kuitenkin varsinaisesti ainoa käytännön merkitys tällä olisi ollut robotin pysäyttämisen kannalta, joka onnistuu nykyisellä ohjelmoinnilla vain eri looppien väleissä. Tämä ei kuitenkaan ole olennaisen tuntuinen puute, sillä ko. loopit ovat aina ajallisesti varsin lyhyitä.
+
+Robotin varsinaisen toiminnan eli labyrinttisuunnistuksen kannalta viimeisen version olennaisimmat ongelmat liittyvät kuitenkin sensorien toimintaan. Kompassi tuntuu heittävän suhteellisen usein esim. yli 20 astetta peräkkäisten mittauksien välillä, mikä voi tehdä minkä tahansa kompassiin perustuvan kääntymisen hyvin epävarmaksi. Koska tässä toteutuksessa kaikki robotin käännökset perustuvat nimenomaan kompassisuuntien lukemiseen, voi tämä johtaa esim. robotin kääntymiseen tulosuuntaan kulmassa tai virheelliseen alkuperäisen suunnan palautukseen eteenpäin liikuttaessa. Näistä viimeisimmästä on esimerkki videolla ProBonoBot_suuntavirhe, jossa robotti liikkuu suoraan eteen, mutta korjaa tämän jälkeen virheellisesti suuntaansa vasemmalle alkuperäisestä suunnasta.
+
+Toinen ja edellistä pahempi ongelma liittyy etäisyyksien mittaamiseen kaikuluotaimella: jos edessä on seinä, joka on sopivasti hieman vinossa kaikuluotaimeen nähden, saadaan etäisyydeksi systemaattisesti hyvin suuri luku. Tämän takia robotti lähtee usein suoralla käytävällä viistosti kohti seinää eikä suinkaan avointa käytävää kohti. Tästä on esimerkki videolla ProBonoBot_etaisyysvirhe, jossa robotti näkee selvästi vapaan käytävän, mutta lähtee silti viistosti kohti seinää.
+
+Näitä ongelmia on kuitenkin ollut vaikea ratkaista suoraviivaisilla korjauksilla, koska ne johtuvat suoraan sensoreiden ominaisuuksista, eivätkä ole siten varsinaisia bugeja robotin ohjelmoinnissa tai rakenteessa. Ajan kanssa korjauksena olisi voinut toimia esim. vierekkäisten etäisyysmittausten vertaaminen toisiinsa ja jonkinlaisen konsistenssin pakottaminen näiden välille.
