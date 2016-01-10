@@ -1,6 +1,5 @@
 package ui.components;
 
-import ui.components.Pointer;
 import lejos.nxt.Button;
 import lejos.nxt.LCD;
 
@@ -29,6 +28,7 @@ public class MotorSelector {
             int key = Button.waitForPress();
 
             if (key == Button.ID_ENTER) {
+                //Because selection A is 3, 3+62 = 65 which is ascii value for character A... B is 4 and so on...
                 return (char)(this.selection + 62);
             }else if (key == Button.ID_LEFT) {
                 this.selection--;

@@ -1,6 +1,5 @@
 package ui.components;
 
-import ui.components.Pointer;
 import lejos.nxt.Button;
 import lejos.nxt.LCD;
 import util.NumberArrayTools;

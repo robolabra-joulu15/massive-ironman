@@ -24,7 +24,8 @@ public class Error {
     public void display() {
         LCD.clear();
         LCD.drawString("ERROR!", 5, 1);
-
+        
+        //draw error text starting from line 4 (y = 3)
         int y = 3;
         for(String row : this.rows) {
             row = row.trim();
