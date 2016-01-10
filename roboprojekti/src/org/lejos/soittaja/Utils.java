@@ -12,7 +12,7 @@ import lejos.util.Delay;
 public class Utils {
 
 	//listen for four claps and return the average interval between them.
-	public static int getTempo(){
+	public static int getTempo() {
 		SensorPort sp = SensorPort.S1;
     SoundSensor sensor = new SoundSensor(sp, true);
     int claps = 0;
@@ -37,9 +37,9 @@ public class Utils {
     	}
     	Delay.msDelay(20);
     }
-		
+
 		return clap_intervals / 3;
-}
+	}
 
 	public static void resetMotors(){
 		Motor.A.rotateTo(0);
