@@ -1,5 +1,3 @@
-# massive-ironman
+Tuuren robotti
 
-Joulun robolabran 2015 pohja
-
-Ohjaus verkossa: #robolabra @ ircnet
+tuure.piitulainen@gmail.com
