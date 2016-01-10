@@ -179,3 +179,5 @@ Täysin samanlainen kuin aikaisempi numerovalitsin, erona vain piste erottamassa
 Valitsemalla START! jommastakummasta valikosta robotti lähtee käyntiin. Robotin tulee olla viivan päällä jotta se osaa lähteä sitä seuraamaan. Jos asetuksissa meni jotain todella pieleen, robotti osaa ilmoittaa siitä:
 
 ![](https://raw.githubusercontent.com/TheDuckFIN/massive-ironman/master/pictures/error.jpg)
+
+Siinäpä se! Ei muutakun viivoja seurailemaan :D
