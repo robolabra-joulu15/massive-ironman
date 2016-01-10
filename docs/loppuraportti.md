@@ -166,11 +166,11 @@ Valitsemalla päävalikosta move speed -kohdan päädyt numerovalitsimeen:
 
 Oikea/vasen nuoli liikkuu osoittamaansa suuntaan, enter kasvattaa arvoa (9 hyppää nollaan) ja escape-nappi palaa takaisin valikkoon.
 
-Valitsemalla PID CONFIGURATION -kohdan päädyt PID-asetusvalikkoon:
+Valitsemalla CONFIGURE PID -kohdan päädyt PID-asetusvalikkoon:
 
 ![](https://raw.githubusercontent.com/TheDuckFIN/massive-ironman/master/pictures/pidconfig.jpg)
 
-Tästä valikosta voit säätää PID-kontrollerin vakioiden arvoja. Painamalla escape-nappia tai menemällä BACK-kohtaan ja painamalla enteriä pääset takaisin päävalikkoon. Jos muokkaat arvoa, päädyt seuraavan näköiseen valitsimeen: 
+Tästä valikosta voit säätää PID-kontrollerin vakioiden arvoja. Painamalla escape-nappia, tai menemällä BACK-kohtaan ja painamalla enteriä pääset takaisin päävalikkoon. Jos päätät muokata jotain arvoa, päädyt seuraavan näköiseen valitsimeen: 
 
 ![](https://raw.githubusercontent.com/TheDuckFIN/massive-ironman/master/pictures/numberselector_double.jpg)
 
