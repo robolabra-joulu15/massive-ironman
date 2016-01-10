@@ -20,3 +20,7 @@ Robotin toiminnalliset osat:
 * Valosensori
 
 Robottia kasatessani tajusin kuinka huono olenkaan leikkimään legoilla. Jouduin siis hetken palikoiden kanssa tuskailtuani etsimään inspiraatiota internetistä, ja päädyin toteuttamaan robotin fyysistä rakennetta [tämän](http://www.nxtprograms.com/castor_bot/index.html) ohjeen pohjalta. Ohjeen avulla toteutettu rakenne osoittautui todella sopivaksi viivanseuraajalle, sillä se on vankka ja kääntyy todella helposti pyörivän takapyöränsä ansiosta. Viivanseuraajaa varten tarvitsin vielä robotin etuosaan valosensorin, ja kehittelin sille itse kiinnityksen alla olevan kuvan mukaisesti.
+
+![](https://raw.githubusercontent.com/TheDuckFIN/massive-ironman/master/pictures/robotv2.jpg)
+![](https://raw.githubusercontent.com/TheDuckFIN/massive-ironman/master/pictures/robotv2_2.jpg)
+![](https://raw.githubusercontent.com/TheDuckFIN/massive-ironman/master/pictures/valosensori.jpg)
