@@ -67,3 +67,10 @@ Ohjelman suoritus lähtee liikkeelle luokasta `Main.java`, joka luo uuden luokan
 `ConfiguratorUI.java`-luokka käyttää avukseen **components**-paketin luokkia valikon toteutuksessa. `ConfiguratorUI.java`-luokan yksi valinta luo uuden `PIDConfiguratorUI.java`-luokan olion ja kutsuu sen `start()`-metodia, jolloin aukeaa PID-asetusvalikko. Kyseinen `start()`-metodi palauttaa `false` jos käyttäjä valitsee "BACK"-vaihtoehdon tai painaa escape-näppäintä. `True` palautetaan, jos käyttäjä valitsee "START!", jolloin myös `ConfiguratorUI.java`-luokan olio josta kutsuttiin PID-asetusvalikkoa palauttaa `true`, jolloin palataan `LineFollower.java`:an.
 
 `PIDController.java`-luokka toteuttaa liikkumisen toimittamalla PID-kontrolleriin liittyviä laskutoimituksia metodissa `start()`, ja laskutoimitusten avulla saa tietoonsa sekä vasemman että oikean moottorin halutut nopeudet, jotka se asettaa `NXTMotor`-luokan metodin `setPower()` avulla. Käytin [tätä](http://www.inpharmix.com/jps/PID_Controller_For_Lego_Mindstorms_Robots.html) opasta hyödykseni PID-kontrolleria toteuttaessani.
+
+## Testaus
+
+Robotin koodia olisi käytännössä ollut vaikea yksikkötestata, joten päätin keskittyä testeissäni käytännön testaamiseen. Koska robotti on säädettävissä, ilmoitan kunkin testitapauksen yhteydessä robotin nopeuden, sekä PID-kontrollerin arvot sillä ne vaikuttavat robotin suoriutumiseen.
+
+**Testi 1:**
+
