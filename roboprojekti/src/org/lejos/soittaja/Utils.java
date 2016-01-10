@@ -1,41 +1,47 @@
 package org.lejos.soittaja;
 
 import lejos.nxt.LCD;
+import lejos.nxt.Motor;
 import lejos.nxt.SensorPort;
 import lejos.nxt.SoundSensor;
 import lejos.util.Delay;
 
 public class Utils {
-	
+
+
+	//listen for four claps and return the average interval between them.
 	public static int getTempo(){
 		SensorPort sp = SensorPort.S1;
         SoundSensor sensor = new SoundSensor(sp, true);
         int claps = 0;
         long last = 0;
-        int bpm = 0;
-        
+        int clap_intervals = 0;
+
         while(claps < 4){
         	LCD.drawString("Kuunnellaan tempoa: " + claps, 0, 2);
         	int vol = sensor.readValue();
-        	
+
         	if(vol > 30){
-        		long hit = System.currentTimeMillis();
+        		long clap = System.currentTimeMillis();
         		if(last != 0){
-        			bpm += (hit - last);
-        		} else{
-        			bpm += 600;
+        			clap_intervals += (clap - last);
         		}
-        		last = hit;
+        		last = clap;
         		claps++;
-        		LCD.drawString("tempo: " + bpm, 0, 2);
+        		LCD.drawString("tempo: " + clap_intervals, 0, 2);
         		LCD.drawString("clap: " + claps, 0, 4);
+        		//wait the sound to decrease before listening for the next clap
         		Delay.msDelay(200);
         	}
         	Delay.msDelay(20);
-        	
         }
-        int res = bpm / 4;
-        bpm = Math.round((float)(1000 / res) * 60);
-		return res;
+
+		return clap_intervals / 3;
+	}
+
+	public static void resetMotors(){
+		Motor.A.rotateTo(0);
+		Motor.B.rotateTo(0);
+		Motor.C.rotateTo(0);
 	}
 }
