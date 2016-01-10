@@ -85,10 +85,13 @@ Nopeus: 40, KP: 3.8, KI: 0.0008, KD: 5.0
 
 Robotti suoriutui yhtä hyvin kuin variaatiosta 1, mutta nopeammin. [Video testistä.](https://www.youtube.com/watch?v=YamIPa5vLpc)
 
+_Variaatio 3:_
+Testasin nopeudella 60, mutta en löytänyt mitään PID-kontrollerin arvoja, joilla robotti ei olisi suistunut radalta ennemmin tai myöhemmin.
+
 **Testi 2:**
 ![](https://raw.githubusercontent.com/TheDuckFIN/massive-ironman/master/pictures/risteys.jpg)
 
-_Variaatio 1:_ Nopeus: 20, KP: 1.2, KI: 0.0008. KD: 5.0
+_Variaatio 1:_ Nopeus: 20, KP: 1.2, KI: 0.0008, KD: 5.0
 
 Robotti nytkähtää risteyksen kohdalla hieman, mutta selviää siitä kuitenkin hyvin. Vaikka robottia ei ole erikseen ohjelmoitu risteystilanteisiin, vaikuttaisi se silti pärjäävän hyvin kohtisuorissa risteyksissä.
 
@@ -96,3 +99,22 @@ _Variaatio 2:_
 Nopeus: 40, KP: 3.8, KI: 0.0008, KD: 5.0
 
 Robotti suoriutui yhtä hyvin kuin variaatiosta 1, mutta nopeammin. [Video testistä.](https://www.youtube.com/watch?v=55bDc3rohFQ)
+
+_Variaatio 3:_
+Testasin nopeudella 60, mutta en löytänyt mitään PID-kontrollerin arvoja, joilla robotti ei olisi suistunut radalta ennemmin tai myöhemmin.
+
+**Testi 3:**
+![](https://raw.githubusercontent.com/TheDuckFIN/massive-ironman/master/pictures/jyrkat.jpg)
+Tässä testissä testasin jyrkkiä mutkia.
+
+_Variaatio 1:_ Nopeus: 20, KP: 1.2, KI: 0.0008, KD: 5.0
+
+Mutka 1: Robotti selvisi mutkasta helposti
+Mutka 2: Robotti suistui radalta
+Mutka 3: Robotti suistui radalta mutkan loppupäässä
+
+_Variaatio 2:_ Nopeus: 40, KP: 3.8, KI: 0.0008, KD: 5.0
+
+Samat tulokset kuin variaatiossa 1.
+
+Vaikuttaisi siis siltä, että robotti on virhealtis liian tiukissa mutkissa. Minulta tosin loppui lattiatila, ja valaistus testinurkassa oli todella huono, joten paremmissa olosuhteissa uskoisin robottini selviävän mutkasta 3. Mutka 2 kuitenkin on uskoakseni robotilleni liikaa. Lisäksi asetuksia säätämällä robotin saa todennäköisesti soveltumaan tiukkoihinkin mutkiin, mutta silloin myös ääritapauksissa sulavuus kärsii (esim. robotti ei osaisi mennä enää suoraan vaan vaappuisi edes takas).
