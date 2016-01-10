@@ -78,7 +78,12 @@ Robotin koodia olisi käytännössä ollut vaikea yksikkötestata, joten pääti
 _Variaatio 1:_
 Nopeus: 20, KP: 1.2, KI: 0.0008, KD: 5.0
 
-Robotti suoriutui testistä moitteettomasti, sillä tämä moodi on hidas ja tarkka (ja myös oletusasetukset)-
+Robotti suoriutui testistä moitteettomasti, sillä tämä moodi on hidas ja tarkka (ja myös oletusasetukset).
+
+_Variaatio 2:_
+Nopeus: 40, KP: 3.8, KI: 0.0008, KD: 5.0
+
+Robotti suoriutui yhtä hyvin kuin variaatiosta 1, mutta nopeammin. [Video testistä.](https://www.youtube.com/watch?v=YamIPa5vLpc)
 
 **Testi 2:**
 ![](https://raw.githubusercontent.com/TheDuckFIN/massive-ironman/master/pictures/risteys.jpg)
@@ -86,3 +91,8 @@ Robotti suoriutui testistä moitteettomasti, sillä tämä moodi on hidas ja tar
 _Variaatio 1:_ Nopeus: 20, KP: 1.2, KI: 0.0008. KD: 5.0
 
 Robotti nytkähtää risteyksen kohdalla hieman, mutta selviää siitä kuitenkin hyvin. Vaikka robottia ei ole erikseen ohjelmoitu risteystilanteisiin, vaikuttaisi se silti pärjäävän hyvin kohtisuorissa risteyksissä.
+
+_Variaatio 2:_
+Nopeus: 40, KP: 3.8, KI: 0.0008, KD: 5.0
+
+Robotti suoriutui yhtä hyvin kuin variaatiosta 1, mutta nopeammin. [Video testistä.](https://www.youtube.com/watch?v=55bDc3rohFQ)
