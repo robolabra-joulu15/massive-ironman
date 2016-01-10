@@ -2,21 +2,6 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group>
-            <file>file:/C:/Users/valtt/Documents/GitHub/massive-ironman/project/src/logic/PIDController.java</file>
-            <file>file:/C:/Users/valtt/Documents/GitHub/massive-ironman/project/src/ui/PIDConfiguratorUI.java</file>
-            <file>file:/C:/Users/valtt/Documents/GitHub/massive-ironman/project/src/util/NumberArrayTools.java</file>
-            <file>file:/C:/Users/valtt/Documents/GitHub/massive-ironman/project/src/ui/components/Error.java</file>
-            <file>file:/C:/Users/valtt/Documents/GitHub/massive-ironman/project/src/ui/components/Pointer.java</file>
-            <file>file:/C:/Users/valtt/Documents/GitHub/massive-ironman/project/src/util/CharMotorPortTools.java</file>
-            <file>file:/C:/Users/valtt/Documents/GitHub/massive-ironman/project/src/util/Configuration.java</file>
-            <file>file:/C:/Users/valtt/Documents/GitHub/massive-ironman/project/src/ui/components/MotorSelector.java</file>
-            <file>file:/C:/Users/valtt/Documents/GitHub/massive-ironman/project/src/ui/ConfiguratorUI.java</file>
-            <file>file:/C:/Users/valtt/Documents/GitHub/massive-ironman/project/src/ui/components/NumberSelector.java</file>
-            <file>file:/C:/Users/valtt/Documents/GitHub/massive-ironman/project/src/logic/ValueChecker.java</file>
-            <file>file:/C:/Users/valtt/Documents/GitHub/massive-ironman/project/src/ui/components/LightValueSelector.java</file>
-            <file>file:/C:/Users/valtt/Documents/GitHub/massive-ironman/project/src/logic/LineFollower.java</file>
-            <file>file:/C:/Users/valtt/Documents/GitHub/massive-ironman/project/src/main/Main.java</file>
-        </group>
+        <group/>
     </open-files>
 </project-private>

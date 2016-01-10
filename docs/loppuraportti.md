@@ -17,7 +17,7 @@ Liikkumisnopeutta ja PID-kontrollerin vakioita säätämällä robotin saa esime
 Robotin toiminnalliset osat:
 * Kaksi moottoria
     - Vasen ja oikea, oletuksena vasen portissa A ja oikea portissa B, nämä kuitenkin säädettävissä robotin asetuksista.
-* Valosensori
+* Valosensori portissa 1, ei säädettävissä.
 
 Robottia kasatessani tajusin kuinka huono olenkaan leikkimään legoilla. Jouduin siis hetken palikoiden kanssa tuskailtuani etsimään inspiraatiota internetistä, ja päädyin toteuttamaan robotin fyysistä rakennetta [tämän](http://www.nxtprograms.com/castor_bot/index.html) ohjeen pohjalta. Ohjeen avulla toteutettu rakenne osoittautui todella sopivaksi viivanseuraajalle, sillä se on vankka ja kääntyy todella helposti ostoskärryn pyöriä muistuttavan takapyöränsä ansiosta.
 
