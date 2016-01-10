@@ -1,4 +1,4 @@
-package ui;
+package ui.components;
 
 import lejos.nxt.Button;
 import lejos.nxt.LCD;

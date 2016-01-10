@@ -1,5 +1,9 @@
 package ui;
 
+import ui.components.MotorSelector;
+import ui.components.LightValueSelector;
+import ui.components.NumberSelector;
+import ui.components.Pointer;
 import lejos.nxt.Button;
 import lejos.nxt.LCD;
 import util.Configuration;

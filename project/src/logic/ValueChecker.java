@@ -1,6 +1,6 @@
 package logic;
 
-import ui.Error;
+import ui.components.Error;
 import util.Configuration;
 
 /*
