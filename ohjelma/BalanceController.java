@@ -19,7 +19,7 @@ public class BalanceController {
 	}
 	
 	/**
-	 * a single iteration for keeping the robot in balance.
+	 * a single iteration for keeping the robot in balance. reads data from sensors and commands motors, determines fall down halt if angle is greater than 85.
 	 * 
 	 * @throws InterruptedException
 	 */

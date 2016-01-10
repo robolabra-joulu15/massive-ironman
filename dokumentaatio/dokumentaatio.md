@@ -16,3 +16,7 @@ fyysinen robotti alkaa olla lopullisessa muodossaan, joskin painopistettä joutu
 #viikko3:
 
 edistystä ei niin hirveästi ole tapahtunut, myin välipäivät raketteja yli 10 tuntisia päiviä ja uv-aattona oli ystäväni hääjuhlat. koodi on kuitenkin nyt siistitty ja kommentoitu kattavasti sekä olen päässäni miettinyt miten implementoin maanopeuden vaikutuksen korjausliikkeen suuruuteen. ennen perjantain demoa se on done ja katsotaan saanko tuon pysymään pystyssä, ainakin perus idea on auennut.
+
+#loppuraportti
+
+robotti on nyt valmis, tarvitsee vielä hieman tukea pysyäkseen pystyssä, aika ei vain riittänyt enää löytämään oikeita korjausarvoja algoritmiini joilla robotti olisi pysynyt täysin itsenäisesti pystyssä. lopullinen dokumentti omassa tiedostossa.

@@ -15,7 +15,7 @@ public class CorrectionMap {
 	public CorrectionMap()
 	{
 		size = 21;
-		double scaleC = 0.0022;
+		double scaleC = 0.0012;   //0.0022;
 		double scaleX = 3.0;
 		map = makeMap(scaleC, scaleX, size);
 		angleMap = makeAngleMap();
@@ -234,20 +234,4 @@ public class CorrectionMap {
 		}
 		else return 0;
 	}
-	
-	/**
-	 * TODO: implement correction with landspeed.
-	 * 
-	 * 
-	 * @param angle
-	 * @param speed
-	 * @param landspeed
-	 * @return
-	 */
-	public int getMotorSpeed(int angle, int speed, int landspeed)
-	{
-		// not implemented yet
-		return 0;
-	}
-	
 }

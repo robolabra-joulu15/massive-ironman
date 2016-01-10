@@ -37,7 +37,7 @@ public class SensorController2 {
 	}
 	
 	/**
-	 * for debugging purposes, prints sensor values and conducted values.
+	 * for debugging purposes, prints sensor values and conducted values to nxt lcd.
 	 */
 	public void lcdPrint()
 	{
@@ -85,6 +85,8 @@ public class SensorController2 {
 		positive_scalar = 100.0f / positive_scale;
 		negative_scalar = 100.0f / negative_scale;
 	}
+	
+	
 	
 	/**
 	 * returns class of AngleAcceleration where the current angle and tilting speed of robot is present. values for angle -100 to 100.

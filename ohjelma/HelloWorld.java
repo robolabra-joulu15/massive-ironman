@@ -4,12 +4,14 @@ public class HelloWorld
 {
   public static void main (String[] aArg) throws Exception
   {
-	  
 	  //debug();
-	  
 	  run();
   }
   
+  /**
+   * prints info to local console and you are able to view outputs from algorithm without uploading software to nxt and determine if it seems legit or not.
+   * @throws InterruptedException
+   */
   public static void debug() throws InterruptedException
   {
 	  CorrectionMap m = new CorrectionMap();
@@ -20,8 +22,6 @@ public class HelloWorld
 	  m.printAngleMap();
 	  m.printSpeedMap();
   }
-  
-  
   
   /**
    * starts the robot, assuming its tilted nose up, calibration starts recording sensor value when nose up, then asks by lowering beep sequence to place the nose down and it records the nose down sensor value.
