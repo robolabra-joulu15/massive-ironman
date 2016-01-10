@@ -1,0 +1,100 @@
+// Koodi on testaamaton joten virheitä saattaa esiintyä (selitys viikkoraportissa 4)
+
+import lejos.nxt.*;
+
+public class Robotti{
+	public static UltrasonicSensor sensori;
+
+	public static void main(String[] args) throws InterruptedException{
+		sensori = new UltrasonicSensor(SensorPort.S1);
+		luoKuuntelija(); // Lopettaa ohjelman suorituksen jos enteriä painetaan
+
+		while(true){
+			if(sensori.getDistance() >= 200) etsi(); // Sensori ei havaitse esinettä / on liian kaukana
+			
+			/*
+			 * Tässä vaiheessa robotti on joko kääntynyt esinettä kohti tai lopettanut 
+			 * toiminnan jos kappaletta ei ole löytynyt, joten metodi getDistance() 
+			 * ei voi palauttaa arvoa 255 (=sensori ei havaitse mitään) ja täten ajaa kohti tyhjyyttä
+			 */
+			if(sensori.getDistance() > 25) eteen(); // Kappale kauempana kuin ~25cm
+			else if(Sensori.getDistance() < 20) taakse(); // Kappale lähempänä kuin ~20cm
+			else pysahdy(); // Sopiva etäisyys
+
+			Thread.sleep(20);
+		}
+	}
+
+	/*
+	 * Robotti kääntyy vuorotellen vasemmalle ja oikealle
+	 */
+	public static void etsi() throws InterruptedException{
+		boolean suunta = false; // False on vasen, true oikea
+
+		/*
+		 * En ole päässyt testaamaan miten hyvin robotti toimii näillä arvoilla (ainoa muutos nyt kovalevyni 
+		 * syövereihin kadonneen koodin kanssa kuuluisi olla tämän for loopin 'ms' muuttujan maksimiarvo)
+		 */
+		for(int ms = 800; ms <= 6400; ms *= 2){
+			if(odota(ms)) return; // Esine löytyi
+
+			if(suunta()) oikea(); else vasen();
+
+			suunta = !suunta;
+		}
+
+		System.exit(0); // Robotti ei löydä mitään kappaletta
+	}
+
+	/*
+	 * metodi odottaa parametrina annetun ajan ja jos sensori havaitsee odotuksen aikana edessään esineen
+	 * palauttaa se arvon true ja jos esinettä ei havaita palauttaa se metodin lopussa arvon false
+	 */
+	public static boolean odota(int ms) throws InterruptedException{
+		while(ms > 0){
+			if(sensori.getDistance() < 200) return true;
+
+			Thread.sleep(20); // Sensori käsittääkseni päivittyy 20ms välein
+			ms -= 20;
+		}
+
+		return false;
+	}
+
+
+	/*
+	 * Moottori B on vasen, C on oikea
+	 */
+	public static void eteen(){
+		Motor.B.forward();
+		Motor.C.forward();
+	}
+	public static void vasen(){
+		Motor.B.backward();
+		Motor.C.forward();
+	}
+	public static void oikea(){
+		Motor.B.forward();
+		Motor.C.backward();
+	}
+	public static void taakse(){
+		Motor.B.backward();
+		Motor.C.backward();
+	}
+	public static void pysahdy(){
+		Motor.B.flt();
+		Motor.C.flt();
+	}
+
+
+	public static void luoKuuntelija(){
+		Button.Enter.addButtonListener(new ButtonListener(){
+			public void buttonPressed(Button b){
+				System.exit(0);
+			}
+			public void buttonReleased(Button b){
+				System.exit(0);
+			}
+		});
+	}
+}
