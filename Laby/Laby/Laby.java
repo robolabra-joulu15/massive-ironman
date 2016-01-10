@@ -7,8 +7,7 @@ import lejos.robotics.navigation.DifferentialPilot;
 
 public class Laby
 {
-	
-	DifferentialPilot pilot = new DifferentialPilot(5.6f, 11.4f, Motor.A, Motor.C);
+	DifferentialPilot pilot = new DifferentialPilot(5.6f, 11.6f, Motor.A, Motor.C);
 	TouchSensor touch = new TouchSensor(SensorPort.S1);
 	UltrasonicSensor ultra = new UltrasonicSensor(SensorPort.S2);
 	Logic logic = new Logic(ultra, pilot);

@@ -27,7 +27,7 @@ public class Logic {
 	//When called, moves the robot forward and then starts the checking procedure
 	public char forward()
 	{	
-		if(!start) //just so we don't run over walls if we begin facing a wall
+		if(!path.get(path.size()-1).equals("start")) //just so we don't run over walls if we begin facing a wall
 		{
 			pilot.travel(dist);
 			start = false;
@@ -61,10 +61,34 @@ public class Logic {
 	
 	public char backTrack()
 	{
-		pilot.travel(-dist);
+		if(path.isEmpty()) //Spaghetti-ish quickfix for a bug related to a double dead-end
+			path.add("start");
 		
 		String direction = path.get(path.size()-1); //get the direction chosen in this spot the last time
 		rmLast(); //remove said direction from the path
+		
+		if(direction.equals("start")) //if we are in the start position, turn around, check left and front and 
+		{								//continue as normal, if no path is found return n for nopath
+			pilot.rotate(180);
+			
+			if(checkLeft())
+			{
+				path.add("left");
+				return 'f';
+			}else
+			{
+				if(checkRight())
+				{
+					path.add("front");
+					return 'f';
+				}
+			}
+			return 'n';
+		}else
+		{
+			pilot.travel(-dist); //If we are not in the start block, travel backwards
+		}
+		
 		
 		if(direction.equals("left")) //if we chose left last time, we can still go forward or right
 		{
@@ -103,16 +127,6 @@ public class Logic {
 			return 'b';
 		}
 		
-		if(direction.equals("start")) //if we are in the start position, turn around and continue as normal
-		{
-			pilot.rotate(180);
-			
-			if(ultra.getRange() < 20) //if after turning around in the start position, there still is no path 
-			{						  //there actually is no way out so we return 'n' for "no-path" and the robot stops
-				return 'n';
-			}
-			return 'f';
-		}
 		
 		return 'n'; //should never actually get here but in case something goes really bad, stop the program.
 	}
