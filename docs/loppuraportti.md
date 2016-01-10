@@ -12,7 +12,7 @@ Säädettävät arvot:
 
 Liikkumisnopeutta ja PID-kontrollerin vakioita säätämällä robotin saa esimerkiksi menemään todella kovaa jos rata on loiva, tai jos rata sisältää todella jyrkkiä mutkia, voi robotin säätää menemään hiljaa mutta tarkasti.
 
-## Robotin rakenne
+## Robotin rakenne ja rakennusohje
 
 Robotin toiminnalliset osat:
 * Kaksi moottoria
@@ -118,3 +118,6 @@ _Variaatio 2:_ Nopeus: 40, KP: 3.8, KI: 0.0008, KD: 5.0
 Samat tulokset kuin variaatiossa 1.
 
 Vaikuttaisi siis siltä, että robotti on virhealtis liian tiukissa mutkissa. Minulta tosin loppui lattiatila, ja valaistus testinurkassa oli todella huono, joten paremmissa olosuhteissa uskoisin robottini selviävän mutkasta 3. Mutka 2 kuitenkin on uskoakseni robotilleni liikaa. Lisäksi asetuksia säätämällä robotin saa todennäköisesti soveltumaan tiukkoihinkin mutkiin, mutta silloin myös ääritapauksissa sulavuus kärsii (esim. robotti ei osaisi mennä enää suoraan vaan vaappuisi edes takas).
+
+# Puutteet ja mahdolliset parannukset
+
