@@ -3,11 +3,15 @@ package org.lejos.example;
 import lejos.nxt.*;
 
 /**
- * Example leJOS Project with an ant build file
- *
+ * Pääluokka
+ * @author janikakaariainen
  */
 public class HelloWorld {
 
+        /**
+         * Alustetaan ohjelma, ja käynnistetään se.
+         * @param args 
+         */
 	public static void main(String[] args) {
 		Maalivahti maalivahti = new Maalivahti();
 		Pallonlaukaisija pallonlaukaisija = new Pallonlaukaisija();

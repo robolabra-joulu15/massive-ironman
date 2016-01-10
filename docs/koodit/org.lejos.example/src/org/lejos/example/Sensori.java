@@ -2,15 +2,30 @@ package org.lejos.example;
 
 import lejos.nxt.*;
 
+/**
+ * Luokka Sensori ohjaa ultraäänisensoria.
+ * @author janikakaariainen
+ */
 public class Sensori {
 	private UltrasonicSensor sensori;
 	private int etaisyys;
 	
+        /**
+         * Konstruktorissa alustetaan etaisyys-muuttujan arvo ja asetetaan
+         * ultraäänisensori porttiin S4. 
+         * @param etaisyys 
+         */
 	public Sensori(int etaisyys) {
 		this.sensori = new UltrasonicSensor(SensorPort.S4);
 		this.etaisyys = etaisyys;
 	}
 	
+        /**
+         * Metodi tutkii, halutaanko laukaista pallo. Metodi kysyy ultraääni-
+         * sensorilta 10 etäisyyttä, ja vertaa niitä etaisyys-muuttujaan.
+         * @return true jos metodi arvelee ettei maalivahti ole edessä,
+         * muuten false.
+         */
 	public boolean laukaistaanko() {
 		int[] etaisyydet = new int[10];
 		int lkm = 0;
