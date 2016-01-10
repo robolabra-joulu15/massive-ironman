@@ -73,4 +73,23 @@ Ohjelman suoritus lähtee liikkeelle luokasta `Main.java`, joka luo uuden luokan
 Robotin koodia olisi käytännössä ollut vaikea yksikkötestata, joten päätin keskittyä testeissäni käytännön testaamiseen. Koska robotti on säädettävissä, ilmoitan kunkin testitapauksen yhteydessä robotin nopeuden, sekä PID-kontrollerin arvot sillä ne vaikuttavat robotin suoriutumiseen.
 
 **Testi 1:**
+![](https://raw.githubusercontent.com/TheDuckFIN/massive-ironman/master/pictures/rata.jpg)
 
+_Variaatio 1:_
+Nopeus: 20
+KP: 1.2
+KI: 0.0008
+KD: 5.0
+
+Robotti suoriutui testistä moitteettomasti, sillä tämä moodi on hidas ja tarkka (ja myös oletusasetukset)-
+
+**Testi 2:**
+![](https://raw.githubusercontent.com/TheDuckFIN/massive-ironman/master/pictures/risteys.jpg)
+
+_Variaatio 1:_
+Nopeus: 20
+KP: 1.2
+KI: 0.0008
+KD: 5.0
+
+Robotti nytkähtää risteyksen kohdalla hieman, mutta selviää siitä kuitenkin hyvin. Vaikka robottia ei ole erikseen ohjelmoitu risteystilanteisiin, vaikuttaisi se silti pärjäävän hyvin kohtisuorissa risteyksissä.
