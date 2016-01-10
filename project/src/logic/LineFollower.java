@@ -25,8 +25,8 @@ public class LineFollower {
     public LineFollower() {
         //Initialize general objects
         this.config = new Configuration();
-        this.configUI = new ConfiguratorUI(this.config);
         this.light = new LightSensor(SensorPort.S1, false);
+        this.configUI = new ConfiguratorUI(this.config, this.light);
         this.pid = new PIDController(this.config, this.light);
         this.valueChecker = new ValueChecker(this.config);
     }

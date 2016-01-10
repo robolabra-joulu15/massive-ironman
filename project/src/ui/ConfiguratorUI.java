@@ -5,6 +5,7 @@ import ui.components.LightValueSelector;
 import ui.components.NumberSelector;
 import ui.components.Pointer;
 import lejos.nxt.Button;
+import lejos.nxt.LightSensor;
 import lejos.nxt.LCD;
 import util.Configuration;
 
@@ -17,9 +18,11 @@ import util.Configuration;
 public class ConfiguratorUI {
 
     private Configuration config;
-
-    public ConfiguratorUI(Configuration config) {
+    private LightSensor light;
+    
+    public ConfiguratorUI(Configuration config, LightSensor light) {
         this.config = config;
+        this.light = light;
     }
 
     public boolean start() {
@@ -46,11 +49,11 @@ public class ConfiguratorUI {
                     this.config.setRightMotorPort(rightMotorSelect.select());
                 }else if (selection == 3) {
                     //Line color selection
-                    LightValueSelector lineColorSelect = new LightValueSelector("Line color");
+                    LightValueSelector lineColorSelect = new LightValueSelector("Line color", this.light);
                     this.config.setLineColor(lineColorSelect.select());
                 }else if (selection == 4) {
                     //BG color selection
-                    LightValueSelector bgColorSelect = new LightValueSelector("BG color");
+                    LightValueSelector bgColorSelect = new LightValueSelector("BG color", this.light);
                     this.config.setBackgroundColor(bgColorSelect.select());
                 }else if (selection == 5) {
                     //Move speed selection

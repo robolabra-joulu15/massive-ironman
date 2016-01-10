@@ -17,8 +17,8 @@ public class LightValueSelector {
     private LightSensor light;
     private String description;
 
-    public LightValueSelector(String description) {
-        this.light = new LightSensor(SensorPort.S1, false);
+    public LightValueSelector(String description, LightSensor light) {
+        this.light = light;
         this.description = description;
     }
 
