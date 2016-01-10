@@ -3,6 +3,8 @@ package org.lejos.soittaja;
 import lejos.nxt.*;
 import lejos.util.*;
 
+/* Laulaja is a class for playing notes through the devices built-in speaker in given tempo.
+*/
 public class Laulaja extends Thread{
 
 	private String melodia;

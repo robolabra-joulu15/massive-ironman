@@ -6,8 +6,10 @@ import lejos.nxt.SensorPort;
 import lejos.nxt.SoundSensor;
 import lejos.util.Delay;
 
-public class Utils {
+/* Includes a couple useful methods for the other classes.
+*/
 
+public class Utils {
 
 	//listen for four claps and return the average interval between them.
 	public static int getTempo(){

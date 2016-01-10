@@ -3,6 +3,8 @@ package org.lejos.soittaja;
 import lejos.nxt.*;
 import lejos.util.*;
 
+/* Soittaja is class that manipulates the motors to hold chords and strum them in given tempo.
+*/
 public class Soittaja extends Thread{
 	private int tempo;
 	private int strumSpeed;
@@ -20,7 +22,7 @@ public class Soittaja extends Thread{
 		LCD.drawString("Luotiin soittaja", 0, 1);
 	}
 
-
+	// Takes the correct chord and plays it, or in case of special characters toggles different strumming styles.
 	public void playChord(char chord, boolean single, int volume, boolean chordChange){
 
 		if(chord == 'D'){
@@ -30,10 +32,10 @@ public class Soittaja extends Thread{
 		} else if(chord == 'A'){
 			Motor.A.rotateTo(-90, true);
 		} else if(chord == ' '){
-			Delay.msDelay(tempo + 160);
+			Delay.msDelay(tempo + 160); //break before next chord
 			return;
 		} else if(chord == '!'){
-			slow = !slow;
+			slow = !slow; //toggle slow playing
 			return;
 		} else if(chord == '<' || chord == '>'){
 			toggleDoubleTempo();
@@ -46,6 +48,7 @@ public class Soittaja extends Thread{
 		useVolume(volume);
 		strumDown(single, slow, doubleTempo);
 
+		//rotate to neutral position if the chord is changing, this quickens the chord change while playing.
 		if(chordChange){
 			Motor.A.rotateTo(0, true);
 		}

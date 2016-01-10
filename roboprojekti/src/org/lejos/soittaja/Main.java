@@ -1,13 +1,7 @@
 package org.lejos.soittaja;
 
-import lejos.nxt.*;
-import lejos.util.Delay;
-
-import org.lejos.soittaja.*;
-
 /**
- * Example leJOS Project with an ant build file
- *
+ * Main class for the guitar-playing robot.
  */
 public class Main {
 
