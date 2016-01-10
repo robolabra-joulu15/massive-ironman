@@ -137,7 +137,7 @@ Robotti olisi mahdollisesti voinut kerätä jotain dataa viivaa seuratessaan, ja
 
 Kasaa robotti ohjeiden mukaan ja tee sille rata. Tämän jälkeen voit siirtää koodin robottiin seuraavasti:
 
-1. Pystytä rojbOS [tämän](https://github.com/robolabra-joulu15/massive-ironman/wiki/1.-environment) ohjeen perusteella. Alla olevat kohdat neuvovat miten tässä ympäristössä siirrät koodin robottiin. Muissa kehitysympäristöissä saattavat kohdat hieman vaihdella.
+1. Pystytä rojbOS [tämän](https://github.com/robolabra-joulu15/massive-ironman/wiki/1.-ymp%C3%A4rist%C3%B6) ohjeen perusteella. Alla olevat kohdat neuvovat miten tässä ympäristössä siirrät koodin robottiin. Muissa kehitysympäristöissä saattavat kohdat hieman vaihdella.
 2. Kloonaa tämä repositorio ja avaa projekti eclipsessä.
 3. Kytke robotti USB-kaapelilla kiinni koneeseen
 4. Paina oikealla hiiren napilla build.xml-tiedostoa ja valitse Run as -> Ant build
