@@ -1,5 +1,3 @@
 # massive-ironman
 
-Joulun robolabran 2015 pohja
-
-Ohjaus verkossa: #robolabra @ ircnet
+Viivaa pitkin kulkeva robotti, joka pysähtyy tai jatkaa matkaa aina kun taputat sille :3
