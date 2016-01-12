@@ -1,5 +1,7 @@
 package org.lejos.example;
 
+
+//Positions class mainly makes life easier while dealing with all the coordinates
 public class Positions {
 	
 	private int x,y;

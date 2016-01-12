@@ -1,13 +1,10 @@
 package org.lejos.example;
 
 
-import java.util.ArrayList;
-import java.util.Random;
 
 import lejos.nxt.*;
 import lejos.robotics.navigation.DifferentialPilot;
 
-import lejos.robotics.localization.*;
 //import lejos.robotics.;
 
 public class HelloWorld {
@@ -18,29 +15,18 @@ public class HelloWorld {
 	public static void main(String[] args) {
 		
 			
-		Motor.A.setSpeed(70);
+		Motor.A.setSpeed(85);
 		Motor.B.setSpeed(50);
 		Motor.C.setSpeed(50);
-		//HelloWorld traveler = new HelloWorld();;
-		//traveler.map = new Map();
-	
 		
-		//traveler.currentx = 0;
-		//traveler.currenty = 0;
-
-		//traveler.pilot = new DifferentialPilot(5.6, 16.5, Motor.B, Motor.C);
-		//traveler.usensor = new UltrasonicSensor(SensorPort.S1);
-		//traveler.secsensor = new UltrasonicSensor(SensorPort.S2);
-		//traveler.takeReadings();
-		//traveler.map.printMap();
-		//Button.waitForPress();
-		
-		Robot robot = new Robot(0, 0);
+		Robot robot = new Robot(0, 0); //Enter start position if different from (0,0)
+		robot.pilot = new DifferentialPilot(5.6, 16.5, Motor.B, Motor.C); //Enter tire diameter instead of 5.6 and track diameter in place of 16.5 if different
 		MoveDecider decider = new MoveDecider(robot);
 		while(!Button.ESCAPE.isPressed()){
 			robot.takeReadings();
 			decider.decide();
 			robot.move();
+			decider.getPossiblePositions().clear();
 		}
 		
 		robot.map.printMap();
