@@ -10,7 +10,7 @@ import triggers.Trigger;
  * 					2. Starts threads
  * 	LOOPS HERE
  * 	|				3. Listening...
- * 	| EXIT IF..		3.1 Listens if NXT.LEFT isPressed
+ * 	| EXIT IF..			3.1 Listens if NXT.LEFT isPressed
  * 	|					3.1.1. Kills the whole projects
  * 	|				3.2 Listens if NXT.RIGHT isPressed
  * 	|					3.2.1. Cancel possible Trigger-flags and set Triggers in wait-mode
@@ -20,7 +20,7 @@ import triggers.Trigger;
  * 	|					3.3.1. Pause Threads (makes them wait)
  * 	|					3.3.2. Calls Robot's routine
  * 	V					3.3.3. Clears Trigger Flags and Pauses --> Place triggers in default state
- * 	TO HERE				3.3.4. Listens again (back to 3.)
+ * 	TO HERE					3.3.4. Listens again (back to 3.)
  * 
  */
 
