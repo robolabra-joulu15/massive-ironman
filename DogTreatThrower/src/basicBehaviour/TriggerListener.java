@@ -11,7 +11,7 @@ import triggers.Trigger;
  * 	LOOPS HERE
  * 	|				3. Listening...
  * 	| EXIT IF..			3.1 Listens if NXT.LEFT isPressed
- * 	|					3.1.1. Kills the whole projects
+ * 	|					3.1.1. Kills the whole project
  * 	|				3.2 Listens if NXT.RIGHT isPressed
  * 	|					3.2.1. Cancel possible Trigger-flags and set Triggers in wait-mode
  * 	|					3.2.2. Calls RoboRoutine.addTrigger
