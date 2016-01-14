@@ -1,0 +1,2 @@
+Kolmannella viikolla aloitin koodaamaan robottiin alustanliikuttelua ja rakensin robotin rungon valmiiksi. 
+Ongelmiksi on moottoreiden epätarkkuus ja lippaan rajoitettu koko.
