@@ -62,9 +62,9 @@ Joulun robolabra 2015
 │   ├── nbproject
 │   │   ├── ide-file-targets.xml
 │   │   └── project.xml
-│   └── src			        *** TÄÄLLÄ ON KOODI ARVOSTELUUN
+│   └── src				*** TÄÄLLÄ ON KOODI ARVOSTELUUN
 │       ├── basicBehaviour		*** TÄÄLLÄ ON KOODI ARVOSTELUUN
-│       │   ├── RoboRoutine.java    	*** TÄÄLLÄ ON KOODI ARVOSTELUUN
+│       │   ├── RoboRoutine.java	*** TÄÄLLÄ ON KOODI ARVOSTELUUN
 │       │   └── TriggerListener.java	*** TÄÄLLÄ ON KOODI ARVOSTELUUN
 │       ├── Main			*** TÄÄLLÄ ON KOODI ARVOSTELUUN
 │       │   └── Main.java		*** TÄÄLLÄ ON KOODI ARVOSTELUUN
