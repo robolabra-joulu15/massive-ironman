@@ -24,7 +24,7 @@ Joulun robolabra 2015
 │   │       ├── ButtonTrigger.class
 │   │       ├── Trigger.class
 │   │       └── VoiceTrigger.class
-│   ├── build
+│   ├── build 
 │   │   ├── basicBehaviour
 │   │   │   ├── RoboRoutine.class
 │   │   │   └── TriggerListener.class
