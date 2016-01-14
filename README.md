@@ -7,13 +7,14 @@ Joulun robolabra 2015
 ├── docs
 │   ├── pictures
 │   │   └── DTT.gif
-│   ├── suunnitelma.md
-│   ├── videos
-│   │   └── DTT_UI_video_low_resolution.mkv
-│   ├── viikko1.md
-│   ├── viikko2.md
-│   ├── viikko3.md
-│   └── viikko4.md
+│   ├── rapsat
+│   │   ├── suunnitelma.md
+│   │   ├── viikko1.md
+│   │   ├── viikko2.md
+│   │   ├── viikko3.md
+│   │   └── viikko4.md
+│   └── videos
+│       └── DTT_UI_video_low_resolution.mkv
 ├── DogTreatThrower
 │   ├── bin
 │   │   ├── basicBehaviour
@@ -25,7 +26,7 @@ Joulun robolabra 2015
 │   │       ├── ButtonTrigger.class
 │   │       ├── Trigger.class
 │   │       └── VoiceTrigger.class
-│   ├── build 
+│   ├── build
 │   │   ├── basicBehaviour
 │   │   │   ├── RoboRoutine.class
 │   │   │   └── TriggerListener.class
@@ -62,18 +63,19 @@ Joulun robolabra 2015
 │   ├── nbproject
 │   │   ├── ide-file-targets.xml
 │   │   └── project.xml
-│   └── src				*** TÄÄLLÄ ON KOODI ARVOSTELUUN
-│       ├── basicBehaviour		*** TÄÄLLÄ ON KOODI ARVOSTELUUN
-│       │   ├── RoboRoutine.java	*** TÄÄLLÄ ON KOODI ARVOSTELUUN
-│       │   └── TriggerListener.java	*** TÄÄLLÄ ON KOODI ARVOSTELUUN
-│       ├── Main			*** TÄÄLLÄ ON KOODI ARVOSTELUUN
-│       │   └── Main.java		*** TÄÄLLÄ ON KOODI ARVOSTELUUN
-│       └── triggers			*** TÄÄLLÄ ON KOODI ARVOSTELUUN
-│           ├── ButtonTrigger.java	*** TÄÄLLÄ ON KOODI ARVOSTELUUN
-│           ├── Trigger.java		*** TÄÄLLÄ ON KOODI ARVOSTELUUN
-│           └── VoiceTrigger.java	*** TÄÄLLÄ ON KOODI ARVOSTELUUN
+│   └── src
+│       ├── basicBehaviour
+│       │   ├── RoboRoutine.java
+│       │   └── TriggerListener.java
+│       ├── Main
+│       │   └── Main.java
+│       ├── taaltaLoytyyKooditArvosteluun.txt
+│       └── triggers
+│           ├── ButtonTrigger.java
+│           ├── Trigger.java
+│           └── VoiceTrigger.java
 ├── README.md
 └── reponRakenne.txt
 
-22 directories, 48 files
+23 directories, 49 files
 <pre>
