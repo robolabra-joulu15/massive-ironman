@@ -1,4 +1,4 @@
-'''
+<pre>
 # massive-ironman
 Joulun robolabra 2015
 
@@ -62,18 +62,18 @@ Joulun robolabra 2015
 │   ├── nbproject
 │   │   ├── ide-file-targets.xml
 │   │   └── project.xml
-│   └── src				***
-│       ├── basicBehaviour		***
-│       │   ├── RoboRoutine.java	***
-│       │   └── TriggerListener.java	***
-│       ├── Main			***
-│       │   └── Main.java		***
-│       └── triggers			***
-│           ├── ButtonTrigger.java	***
-│           ├── Trigger.java		***
-│           └── VoiceTrigger.java	***
+│   └── src			                    	*** TÄÄLLÄ ON KOODI ARVOSTELUUN
+│       ├── basicBehaviour		        *** TÄÄLLÄ ON KOODI ARVOSTELUUN
+│       │   ├── RoboRoutine.java    	*** TÄÄLLÄ ON KOODI ARVOSTELUUN
+│       │   └── TriggerListener.java	*** TÄÄLLÄ ON KOODI ARVOSTELUUN
+│       ├── Main			                *** TÄÄLLÄ ON KOODI ARVOSTELUUN
+│       │   └── Main.java		          *** TÄÄLLÄ ON KOODI ARVOSTELUUN
+│       └── triggers			            *** TÄÄLLÄ ON KOODI ARVOSTELUUN
+│           ├── ButtonTrigger.java	  *** TÄÄLLÄ ON KOODI ARVOSTELUUN
+│           ├── Trigger.java		      *** TÄÄLLÄ ON KOODI ARVOSTELUUN
+│           └── VoiceTrigger.java	    *** TÄÄLLÄ ON KOODI ARVOSTELUUN
 ├── README.md
 └── reponRakenne.txt
 
 22 directories, 48 files
-'''
+<pre>
