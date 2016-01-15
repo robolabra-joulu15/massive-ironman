@@ -9,7 +9,7 @@ import lejos.nxt.*;
 
 /*
  * This class includes Lego-robot's basic functionality and working routine.
- * Lego-robot will consist of	2 servoMotors	(ports A and B)
+ * Lego-robot will consist of					2 servoMotors	(ports A and B)
  * 								1 buttonSensor	(port 1)
  * 								1 voiceSensor	(port 2)
  * A-servo will be used for firepower (rapidly spinning legostick).
